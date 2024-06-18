@@ -1,51 +1,105 @@
-"use client"
-import Image from 'next/image'
-import React, { useEffect } from 'react'
-import logo from "../asserts/logo.png"
+import React from 'react';
+import { Container, Dropdown, Nav, Navbar, NavItem, NavLink } from 'react-bootstrap';
+import Image from 'next/image';
+import logo from "../asserts/logo.png";
 
-const Navbar = () => {
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  });
+const DropdownSubMenu = ({ title, children, ...props }) => {
   return (
-    <div style={{position:'fixed', top:'0', zIndex:'999', width:'100%'}}>
-      <nav className="navbar navbar-expand-lg">
-        <div className="container" style={{backgroundColor:'#FFF', color:'#000', borderBottomLeftRadius:'22px', borderBottomRightRadius:'22px', marginTop:'-10px'}}>
-          <a className="navbar-brand" href="#">
-            <Image src={logo} alt="Logo" style={{width:'auto', height:'100px'}}/>
-          </a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Company</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Offering</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Solutions</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Career</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Contact Us</a>
-              </li>
-            </ul>
+    <Dropdown drop="right" {...props}>
+      <Dropdown.Toggle as="a" href="#" className="dropdown-item">
+        {title}
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        {children}
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};
+
+const Navbar9 = () => {
+  return (
+    <div style={{ position: 'fixed', top: '0', zIndex: '999', width: '100%' }}>
+      <Container>
+        <Navbar expand="lg" style={{ backgroundColor: '#FFF', color: '#000', borderBottomLeftRadius: '22px', borderBottomRightRadius: '22px', marginTop: '-10px',padding:"0px 15px" }}>
+          <Navbar.Brand href="#">
+            <Image src={logo} alt="Logo" style={{ width: 'auto', height: '100px' }} />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarSupportedContent" />
+          <Navbar.Collapse id="navbarSupportedContent">
+            <Nav className="mx-auto mb-2 mb-lg-0">
+              <NavItem>
+                <NavLink href="/" active>Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/about">Company</NavLink>
+              </NavItem>
+              <Dropdown as={NavItem}>
+                <Dropdown.Toggle as={NavLink} id="offeringDropdown">
+                  Offering
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <DropdownSubMenu className="dropend"  title="Embedded Product Engineering">
+                    <Dropdown.Item href="/autosar">AUTOSAR</Dropdown.Item>
+                    <Dropdown.Item href="/Infotainment">Infotainment</Dropdown.Item>
+                    <Dropdown.Item href="/ev-tmc&bms">EV - TMC & BMS</Dropdown.Item>
+                  </DropdownSubMenu>
+
+                  
+
+                  <DropdownSubMenu className="dropend" title="Automotive Cyber Security Engineering">
+                    <Dropdown.Item href="#">Sub cyber security concept phase</Dropdown.Item>
+                    <Dropdown.Item href="#">Product development phase</Dropdown.Item>
+                    <Dropdown.Item href="#">Thread analysis and risk assessment methods</Dropdown.Item>
+                  </DropdownSubMenu>
+
+             
+
+                  <DropdownSubMenu className="dropend" title="Training">
+                    <Dropdown.Item href="#">Cyber security</Dropdown.Item>
+                    <Dropdown.Item href="#">Validation</Dropdown.Item>
+                    <Dropdown.Item href="#">System requirements</Dropdown.Item>
+                  </DropdownSubMenu>
+
+                
+
+                  <DropdownSubMenu className="dropend" title="AI & Computer Vision">
+                    <Dropdown.Item href="#">Action Recognition and Localization</Dropdown.Item>
+                    <Dropdown.Item href="#">Attention Maps</Dropdown.Item>
+                  </DropdownSubMenu>
+
+               
+
+                  <DropdownSubMenu className="dropend" title="Tools & Automation">
+                    <Dropdown.Item href="#">Data Analytics Tools</Dropdown.Item>
+                    <Dropdown.Item href="#">Test Authoring Tool</Dropdown.Item>
+                  </DropdownSubMenu>
+
+                
+
+                  <DropdownSubMenu className="dropend" title="Verification & Validation">
+                    <Dropdown.Item href="#">System Validation - ADAS</Dropdown.Item>
+                    <Dropdown.Item href="#">Software Testing</Dropdown.Item>
+                  </DropdownSubMenu>
+                </Dropdown.Menu>
+              </Dropdown>
+              <NavItem>
+                <NavLink href="#">Solutions</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/career">Career</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contact">Contact Us</NavLink>
+              </NavItem>
+            </Nav>
             <form className="d-flex" role="search">
               <button className="navbtn" type="submit">&nbsp;Let's Talk&nbsp;</button>
             </form>
-          </div>
-        </div>
-      </nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar9;
