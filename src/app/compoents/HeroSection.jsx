@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import aiimage from "../asserts/Digitalidentity.png"
 import "bootstrap/dist/css/bootstrap.min.css";
+import validation from "../asserts/validation.png"
 
 const HeroSection = () => {
   return (
@@ -857,8 +858,8 @@ const HeroSection = () => {
     </div>
 
     <div className='home-card container'>
-      <div className="container  justify-content-center align-items-center">
-        <div className="row bor">
+      <div className="container   align-items-center">
+        <div className="row bor d-flex justify-content-between align-items-center">
           <div className="col-md-8">
           <div className='home'>
         <h1>Digital Transformation Control</h1>
@@ -871,23 +872,22 @@ const HeroSection = () => {
         </div>
        
           </div>
-          <div className="col-md-4">
-          <div>
+          <div className="col-md-4 d-flex justify-content-end">
            <Image src={aiimage} alt="transform ai" style={{width:'40%', height:'auto'}}/>
-
-        </div>
           </div>
         </div>
       </div>
 
+<br/>
+<br/>
       <div className="container">
-        <div className="row d-flex justify-content-evenly align-items-center">
+        <div className="row d-flex justify-content-between align-items-center">
         <div className="col-md-5 bor">
            <h2>Automated System integration</h2>
            <p>Effortlessly automate recurring engineering processes. Simplify your 
 workflow for greater productivity.</p>
           </div>
-          <div className="col-md-5 bor " style={{backgroundColor:"	 #d9d9d9"}}>
+          <div className="col-md-5 bor " style={{backgroundColor:"#d9d9d9"}}>
           <h2>Collaborative Engineering Teams</h2>
            <p>Empower your team with collaborative tools. Enhance transparencyin engineering operations.</p>
           </div>
@@ -896,21 +896,44 @@ workflow for greater productivity.</p>
      
     </div>
 
+    <br/>
+    <br/>
+
     <div className="container">
       <div className='row'>
         <div className='col-md-8'>
           <div className='row'>
-           <div className='col'>Automotive</div>
-           <div className='col'>Integration</div>
+           <div className='col'>
+            <div className='bor'>
+           <h1> Automotive </h1>
+            </div>
+           </div>
+           <div className='col'>
+            <div className='bor'>
+              <h1>Integration</h1>
+            </div>
+            </div>
           </div>
           <div className='row'>
-           <div className='col'>Cyber Security</div>
-           <div className='col'>Development</div>
+           <div className='col'>
+           <div className='bor'><h1>Cyber Security</h1></div>
+            </div>
+           <div className='col'> <div className='bor'>
+            <h1>Development</h1></div></div>
           </div>
           
         </div>
         <div className='col-md-4'>
-          <div>validation</div>
+        <div className='bor'>
+        <div><p>
+
+ <Image src={validation} alt="validation" style={{width:'100%', height:'auto'}}/>
+
+
+          </p></div>
+        </div>
+
+        
         </div>
       </div>
     </div>

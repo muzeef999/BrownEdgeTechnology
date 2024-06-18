@@ -20,7 +20,7 @@ const Navbar9 = () => {
   return (
     <div style={{ position: 'fixed', top: '0', zIndex: '999', width: '100%' }}>
       <Container>
-        <Navbar expand="lg" style={{ backgroundColor: '#FFF', color: '#000', borderBottomLeftRadius: '22px', borderBottomRightRadius: '22px', marginTop: '-10px',padding:"0px 15px" }}>
+        <Navbar expand="lg" style={{ backgroundColor: '#FFF', color: '#000', borderBottomLeftRadius: '22px', borderBottomRightRadius: '22px', marginTop: '-10px',padding:"0px 15px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2),   0 6px 20px rgba(0, 0, 0, 0.2)" }}>
           <Navbar.Brand href="#">
             <Image src={logo} alt="Logo" style={{ width: 'auto', height: '100px' }} />
           </Navbar.Brand>
