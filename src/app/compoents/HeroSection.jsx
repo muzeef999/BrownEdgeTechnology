@@ -4,6 +4,14 @@ import aiimage from "../asserts/Digitalidentity.png"
 import "bootstrap/dist/css/bootstrap.min.css";
 import validation from "../asserts/validation.png"
 
+import { FaGears } from "react-icons/fa6";
+import { TbArrowMergeAltLeft } from "react-icons/tb";
+import { MdOutlineSecurity } from "react-icons/md";
+import { MdOutlineDeveloperMode } from "react-icons/md";
+
+
+
+
 const HeroSection = () => {
   return (
     <>
@@ -898,6 +906,8 @@ workflow for greater productivity.</p>
 
     <br/>
     <br/>
+    
+
 
     <div className="container">
       <div className='row'>
@@ -905,21 +915,43 @@ workflow for greater productivity.</p>
           <div className='row'>
            <div className='col'>
             <div className='bor'>
-           <h1> Automotive </h1>
+              <div className='d-flex justify-content-between align-items-center'>
+              <FaGears/>
+              <h4> Automotive </h4>
+              </div>
+              <p>The automotive industry is rapidly advancing with electric vehicles and autonomous driving technologies.</p>
+              
             </div>
            </div>
            <div className='col'>
             <div className='bor'>
-              <h1>Integration</h1>
+             <div className='d-flex justify-content-between align-items-center'>
+              <TbArrowMergeAltLeft/>
+              <h4>Integration</h4>
+              </div>
+              <p>Integration of electric vehicles and autonomous driving technologies is revolutionizing the automotive industry.</p>
             </div>
+            
             </div>
           </div>
+          <br/>
           <div className='row'>
            <div className='col'>
-           <div className='bor'><h1>Cyber Security</h1></div>
+           <div className='bor'>
+            <div className='d-flex justify-content-between align-items-center'>
+            <MdOutlineSecurity/>
+            <h4>Cyber Security</h4>
             </div>
-           <div className='col'> <div className='bor'>
-            <h1>Development</h1></div></div>
+            <p>Cybersecurity is crucial for protecting digital assets and sensitive information from increasingly sophisticated cyber threats.</p>
+            </div>
+            </div>
+           <div className='col'><div className='bor'>
+            <div className='d-flex justify-content-between align-items-center'>
+            <MdOutlineDeveloperMode/>
+            <h4>Development</h4></div>
+            <p>Development in technology drives innovation and growth across various industries.</p>
+            </div>
+            </div>
           </div>
           
         </div>
@@ -936,6 +968,8 @@ workflow for greater productivity.</p>
         
         </div>
       </div>
+      <br/>
+      <h1>hello</h1>
     </div>
     </>
   );
