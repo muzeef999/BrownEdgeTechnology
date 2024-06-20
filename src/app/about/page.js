@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { FaArrowRight, FaHome } from "react-icons/fa";
-import bgcontact from "../asserts/bgcontact.jpg";
+import bgcontact from "../asserts/aboutus.jpg";
 import Image from "next/image";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const page = () => {
   const [activeTab, setActiveTab] = useState("about-us");
@@ -20,8 +20,15 @@ const page = () => {
             backgroundColor: "#974c01",
             width: "80%",
             height: "350px",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            color: "#FFF",
           }}
-        ></div>
+        >
+          {" "}
+          <h1>About us</h1>
+        </div>
         <Image
           src={bgcontact}
           alt="image"

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { FaArrowRight, FaHome } from "react-icons/fa";
 import validation from "../asserts/validation.png";
 
+import bgcontact from "../asserts/bgcontact.jpg";
+
 import one from "../asserts/carrer/1.jpg";
 import two from "../asserts/carrer/2.jpg";
 import three from "../asserts/carrer/3.jpg";
@@ -21,17 +23,27 @@ const Page = () => {
 
   return (
     <>
-      <div className="about">
-        <div className="container">
-          <h1>Careers</h1>
-          <p className="d-flex justify-content-start align-items-center">
-            <FaHome className="me-1" /> Home{" "}
-            <span className="ms-1">
-              <FaArrowRight />
-              <b className="ms-1">Careers</b>
-            </span>
-          </p>
-        </div>
+      <div style={{ position: "relative" }}>
+        <div
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 75% 100%, 0% 100%)",
+            backgroundColor: "#974c01",
+            width: "80%",
+            height: "350px",
+          }}
+        ></div>
+        <Image
+          src={bgcontact}
+          alt="image"
+          style={{
+            width: "auto",
+            height: "350px",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            zIndex: -999,
+          }}
+        />
       </div>
 
       <br />
