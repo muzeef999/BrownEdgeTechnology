@@ -4,7 +4,7 @@ import bgcontact from "../asserts/aboutus.jpg";
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const page = () => {
+const Page = () => {
   const [activeTab, setActiveTab] = useState("about-us");
 
   const handleTabClick = (tab) => {
@@ -334,4 +334,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

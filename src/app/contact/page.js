@@ -23,7 +23,7 @@ import bgcontact from "../asserts/bgcontact.jpg";
 import "../Styles/contact.css";
 import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   const [focus, setFocus] = useState({
     name: false,
     email: false,
@@ -200,4 +200,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
