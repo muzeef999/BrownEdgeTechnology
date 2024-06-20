@@ -99,7 +99,7 @@ body {
   padding: 12px;
 }
 .dropdown-item ,a.nav-link{
-  padding:20px !important;
+  padding:8px 14px !important;
   font-weight: 500 !important;
   color: #5F6368 !important;
 }
@@ -135,7 +135,6 @@ td{
   box-shadow: 0 1px 2px rgba(32, 33, 36, 0.15), 0 1px 8px rgba(32, 33, 36, 0.08);
   font-weight: bold;
   margin: 0 5px;
- padding: 8px 14px;
  justify-content: center;
  align-items: center;
 }
@@ -150,7 +149,6 @@ td{
 .nav-link.active1 {
   border-radius: 25px;
   background-color: #f1f3f4;
-  padding: 18px 28px;
   margin: 5px;
 }
 
@@ -164,27 +162,8 @@ td{
 }
 
 
-.contact-border {
-  border: 2px solid #964B00;
-  padding: 60px 0px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 15px;
-  box-shadow: 33px 33px 66px #d5d5d5, -33px -33px 66px #ebebeb;
-}
-.con {
-  display: flex;
-}
 
 
-.contact_input input {
-  margin: 25px;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #964B00;
-  background-color: rgb(235, 237, 239) !important;
-}
 .card-boxes div .card{
   
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.2);

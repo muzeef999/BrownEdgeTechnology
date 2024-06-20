@@ -21,18 +21,19 @@ const Page = () => {
 
   return (
     <>
-      <div className="career">
+      <div className="about">
         <div className="container">
-          <h1>Career</h1>
+          <h1>Careers</h1>
           <p className="d-flex justify-content-start align-items-center">
             <FaHome className="me-1" /> Home{" "}
             <span className="ms-1">
               <FaArrowRight />
-              <b className="ms-1">Career</b>
+              <b className="ms-1">Careers</b>
             </span>
           </p>
         </div>
       </div>
+
       <br />
 
       <div className="container">

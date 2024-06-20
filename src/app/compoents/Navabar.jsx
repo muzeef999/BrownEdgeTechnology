@@ -58,7 +58,7 @@ const Navbar9 = () => {
                 <NavLink href="/" active>Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Company</NavLink>
+                <NavLink href="/about">About Us</NavLink>
               </NavItem>
               <Dropdown as={NavItem} >
                 <Dropdown.Toggle as={NavLink} id="offeringDropdown">
@@ -111,7 +111,10 @@ const Navbar9 = () => {
                 <NavLink href="#">Solutions</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/career">Career</NavLink>
+                <NavLink href="/career">Careers</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/blogs">Blogs</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/contact">Contact Us</NavLink>

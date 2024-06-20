@@ -1,125 +1,196 @@
-import React from "react";
-import { FaArrowRight, FaHome } from "react-icons/fa";
+"use client";
+import React, { useState } from "react";
+import { Button, Col, Form, Row } from "react-bootstrap";
+import {
+  FaArrowRight,
+  FaComment,
+  FaEnvelope,
+  FaHome,
+  FaPhone,
+  FaTag,
+  FaUser,
+} from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import {
+  IoCall,
+  IoChatbubbleEllipsesOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
+
+import contactus from "../asserts/contactus.png";
+import bgcontact from "../asserts/bgcontact.jpg";
+
+import "../Styles/contact.css";
+import Image from "next/image";
 
 const page = () => {
+  const [focus, setFocus] = useState({
+    name: false,
+    email: false,
+    subject: false,
+    message: false,
+  });
+
+  const handleFocus = (field) => {
+    setFocus((prevFocus) => ({ ...prevFocus, [field]: true }));
+  };
+
+  const handleBlur = (field) => {
+    setFocus((prevFocus) => ({ ...prevFocus, [field]: false }));
+  };
   return (
     <>
-      <div className="about">
-        <div className="container">
-          <h1>About US</h1>
-          <p className="d-flex justify-content-start align-items-center">
-            <FaHome className="me-1" /> Home{" "}
-            <span className="ms-1">
-              <FaArrowRight />
-              <b className="ms-1">About us</b>
-            </span>
-          </p>
-        </div>
+      <div style={{ position: "relative" }}>
+        <div
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 75% 100%, 0% 100%)",
+            backgroundColor: "#974c01",
+            width: "80%",
+            height: "350px",
+          }}
+        ></div>
+        <Image
+          src={bgcontact}
+          alt="image"
+          style={{
+            width: "auto",
+            height: "350px",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            zIndex: -999,
+          }}
+        />
       </div>
 
-      <div className="container">
-        <div className="row my-5">
-          <div className="col-md-6">
-            <h5 style={{ color: "#964B00", fontWeight: "700" }}>
-              REGISTERED OFFICE :
-            </h5>
-            <p>66/B,Phase-II, IDA, MALLAPUR HYDERABAD-500076, INDIA</p>
-            <ul>
-              <li>
-                <b>PHONE : </b>
-                <span>+91-40-27178028</span>
-              </li>
-              <li>
-                <b>FAX : </b>
-                <span>+91-40-27153793</span>
-              </li>
-              <li>
-                <b>MAIL : </b>
-                <span style={{ color: "#964B00", fontWeight: "700" }}>
-                  info@synthochirals
-                </span>
-              </li>
-            </ul>
-            <h5
-              className="my-4"
-              style={{ color: "#964B00", fontWeight: "700" }}
-            >
-              PLANT ADDRESS :
-            </h5>
-            <ul>
-              <li>
-                <b>PLOT NO - </b>
-                <span>53b & 54P</span>
-              </li>
-              <p className="my-2">
-                Kolhar Industrial Area, Kolhar Bidar-585401, Karnataka , INDIA.
+      <br />
+      <div
+        className="container"
+        style={{
+          borderRadius: "10px",
+
+          backgroundColor: "#FFF",
+          boxShadow:
+            "0 4px 8px rgba(0, 0, 0, 0.2),  0 6px 20px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        <div className="row p-2">
+          <div
+            className="col-md-4 card"
+            style={{
+              backgroundColor: "#974c01",
+              color: "#FFF",
+              padding: "0px",
+            }}
+          >
+            <div className="p-5">
+              <h2>Contact Information:</h2>
+              <p>
+                We will create high-quality, linkable content and build at least
+                40 high-authority backlinks for your website.
               </p>
-              <li>
-                <b>PHONE : </b>
-                <span>08482-232499.</span>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-6">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6369689883663!2d78.57000027594054!3d17.429201201597667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90f74bffffff%3A0x609797bc75a95e3e!2sSyntho%20Chirals%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1718256262743!5m2!1sen!2sin"
-              width="600"
-              height="450"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-
-      {/* third part */}
-
-      <div className="contact">
-        <div className="container contact-border">
-          <div>
-            <h3 className="head">
-              Get in <span style={{ color: "#964B00" }}>touch</span> with us
-              today
-            </h3>
-          </div>
-          <div className="contact_input">
-            <div className="con">
-              <div>
-                <input type="text" placeholder="Name" name="" id="" />
-              </div>
-              <div>
-                <input type="email" placeholder="email" name="" id="" />
-              </div>
-            </div>
-            <div className="con">
-              <div>
-                <input
-                  type="number"
-                  maxLength={10}
-                  minLength={10}
-                  placeholder="PhoneNumber"
-                  name=""
-                  id=""
-                />
-              </div>
-              <div>
-                <input type="text" placeholder="Subject" name="" id="" />
-              </div>
-            </div>
-            <div className="d-flex">
-              <div>
-                <input type="text" placeholder="Your Message" name="" id="" />
-              </div>
+              <p>
+                <IoLocationOutline />
+                &nbsp; Flat No.104, Sri Balaji Apartments, Nimboliadda,
+                Himayathnagar, Himayathnagar, Telangana, India, 500027
+              </p>
+              <p>
+                <IoChatbubbleEllipsesOutline />
+                &nbsp; Chat with an Expert
+              </p>
+              <p>
+                <IoCall /> +91 9959456647
+              </p>
+              <p>
+                <IoMdMail /> Shaikmuzeef9999@gmail.com
+              </p>
             </div>
             <div>
-              <button
-                className="btn  my-3 ms-3"
-                style={{ backgroundColor: "#964B00", color: "#FFF" }}
-              >
-                submit
-              </button>
+              <Image
+                src={contactus}
+                alt="image"
+                style={{
+                  width: "60%",
+                  height: "auto",
+                  marginTop: "-160px",
+                  float: "right",
+                }}
+              />
             </div>
+          </div>
+          <div className="col-md-8 p-5">
+            <Form className="d-flex flex-column  justify-content-between h-100">
+              <Row>
+                <Col md={6}>
+                  <Form.Group
+                    controlId="formName"
+                    className={`form-group ${focus.name ? "focused" : ""}`}
+                  >
+                    <Form.Label className="custom-label">
+                      <FaUser /> Your Name
+                    </Form.Label>
+                    <Form.Control
+                      className="custom-input"
+                      type="text"
+                      placeholder="John Trangely"
+                      onFocus={() => handleFocus("name")}
+                      onBlur={(e) => handleBlur("name")}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={6}>
+                  <Form.Group
+                    controlId="formEmail"
+                    className={`form-group ${focus.email ? "focused" : ""}`}
+                  >
+                    <Form.Label className="custom-label">
+                      <FaEnvelope /> Your Email
+                    </Form.Label>
+                    <Form.Control
+                      className="custom-input"
+                      type="email"
+                      placeholder="hello@nuracy.com"
+                      onFocus={() => handleFocus("email")}
+                      onBlur={() => handleBlur("email")}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Form.Group
+                controlId="formSubject"
+                className={`form-group mb-3 ${focus.subject ? "focused" : ""}`}
+              >
+                <Form.Label className="custom-label">
+                  <FaTag /> Your Subject
+                </Form.Label>
+                <Form.Control
+                  className="custom-input"
+                  type="text"
+                  placeholder="I want to hire you quickly"
+                  onFocus={() => handleFocus("subject")}
+                  onBlur={() => handleBlur("subject")}
+                />
+              </Form.Group>
+              <Form.Group
+                controlId="formMessage"
+                className={`form-group mb-3 ${focus.message ? "focused" : ""}`}
+              >
+                <Form.Label className="custom-label">
+                  <FaComment /> Message
+                </Form.Label>
+                <Form.Control
+                  className="custom-input"
+                  as="textarea"
+                  rows={3}
+                  placeholder="Write here your message"
+                  onFocus={() => handleFocus("message")}
+                  onBlur={() => handleBlur("message")}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit" className="custom-button">
+                Send Message
+              </Button>
+            </Form>
           </div>
         </div>
       </div>
