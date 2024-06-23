@@ -62,7 +62,6 @@ const Page = () => {
           }}
         />
       </div>
-
       <br />
       <div
         className="container"

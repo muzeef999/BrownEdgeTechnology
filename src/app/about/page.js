@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import bgcontact from "../asserts/aboutus.jpg";
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("about-us");
+
+  const router = useRouter();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -99,7 +102,7 @@ const Page = () => {
                   activeTab === "job-opportunities" ? "active1" : ""
                 }`}
                 id="job-opportunities-tab"
-                onClick={() => handleTabClick("job-opportunities")}
+                onClick={() => router.push("/contact")}
                 role="tab"
                 aria-controls="job-opportunities"
                 aria-selected={activeTab === "job-opportunities"}
@@ -122,7 +125,7 @@ const Page = () => {
             <div className="container">
               <br />
               <p
-                style={{ color: "#964b00", fontWeight: 700, fontSize: "30px" }}
+                style={{ color: "#964b00", fontWeight: 600, fontSize: "30px" }}
               >
                 Our Story:
               </p>
@@ -155,7 +158,7 @@ const Page = () => {
                   <p
                     style={{
                       color: "#964b00",
-                      fontWeight: 700,
+                      fontWeight: 600,
                       fontSize: "30px",
                     }}
                   >
@@ -174,7 +177,7 @@ const Page = () => {
                   <p
                     style={{
                       color: "#964b00",
-                      fontWeight: 700,
+                      fontWeight: 600,
                       fontSize: "30px",
                     }}
                   >
@@ -191,7 +194,7 @@ const Page = () => {
                   <p
                     style={{
                       color: "#964b00",
-                      fontWeight: 700,
+                      fontWeight: 600,
                       fontSize: "30px",
                     }}
                   >
@@ -228,9 +231,8 @@ const Page = () => {
               </div>
               <br />
               <p
-                style={{ color: "#964b00", fontWeight: 700, fontSize: "30px" }}
+                style={{ color: "#964b00", fontWeight: 600, fontSize: "30px" }}
               >
-                {" "}
                 Core Components of Brown Edge Technology
               </p>
               <p>
@@ -270,7 +272,7 @@ const Page = () => {
               diverse talents of all its employees.
             </p>
           </div>
-          <div
+          {/* <div
             className={`tab-pane fade ${
               activeTab === "job-opportunities" ? "show active1" : ""
             }`}
@@ -278,54 +280,8 @@ const Page = () => {
             role="tabpanel"
             aria-labelledby="job-opportunities-tab"
           >
-            <h2 style={{ color: "#964B00" }}> JOB OPPORTUNITIES</h2>
-            <br />
-            <div
-              className="row d-flex justify-content-evenly align-items-center"
-              style={{ color: "#FFF" }}
-            >
-              <div
-                className="col-md-6 p-4"
-                style={{
-                  backgroundColor: "#cc6600",
-                  borderRadius: "6px",
-                  width: "45%",
-                }}
-              >
-                <h3>Be a revolutionary</h3>
-                <p>
-                  Today’s job seekers want to make a tangible, positive impact
-                  on the world. At Visteon, we’re changing the world in a number
-                  ofgreat ways. We’re uniquely positioned to capitalize on two
-                  significant industry trends – electric and autonomous
-                  vehicles. Our technology will completely change the way we
-                  interact with our vehicles, reduce the number of car accidents
-                  and fatalities, and make the world a cleaner place. We’re not
-                  just dreamers, we’re doers.
-                </p>
-              </div>
-              <div
-                className="col-md-6 p-4"
-                style={{
-                  backgroundColor: "#cc6600",
-                  borderRadius: "6px",
-                  width: "45%",
-                }}
-              >
-                <h3>Grow your career</h3>
-                <p>
-                  Whether you’re an engineer, algorithm developer or a financial
-                  analyst, you’ll see opportunities for professional development
-                  and career advancement. If you’re passionate about advancing
-                  your career, Visteon is the place for you. We offer
-                  mentorships, rotational programs and education benefits. Our
-                  technical ladder program offers development in a range of
-                  engineering disciplines. At Visteon, it’s all within your
-                  reach.
-                </p>
-              </div>
-            </div>
-          </div>
+            
+          </div> */}
         </div>
       </div>
 
