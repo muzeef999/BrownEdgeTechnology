@@ -1,10 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { IoIosAdd, IoIosCreate, IoIosTrash } from "react-icons/io";
 import bgcontact from "../../asserts/aboutus.jpg";
+
+// Dynamically import ReactQuill with no SSR
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import "react-quill/dist/quill.snow.css";
 
 const Page = () => {
   const [blogs, setBlogs] = useState([]);
@@ -181,11 +184,15 @@ const Page = () => {
               className="form-control"
             />
           </div>
-          <ReactQuill
-            theme="snow"
-            value={currentBlog.content}
-            onChange={(content) => setCurrentBlog({ ...currentBlog, content })}
-          />
+          {typeof window !== "undefined" && (
+            <ReactQuill
+              theme="snow"
+              value={currentBlog.content}
+              onChange={(content) =>
+                setCurrentBlog({ ...currentBlog, content })
+              }
+            />
+          )}
           <div>
             <button
               className="btn btn-danger my-3"
