@@ -1,6 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import Embedded  from "../asserts/EmbeddedProduct.png";
+import ai from "../asserts/aicomputer.png";
+import verification from "../asserts/Verification.png";
+import datascience from "../asserts/DataScience.png"
+import title  from "../asserts/title.png"
+import tools from "../asserts/tools.png"
 
 const Offering = () => {
   return (
@@ -31,7 +36,7 @@ const Offering = () => {
 
             <div className='grid-items-home'>
               <div>
-              <Image className='mx-auto d-block' src={Embedded} style={{width:'30%', height:'auto'}}/>
+              <Image className='mx-auto d-block' src={datascience} style={{width:'30%', height:'auto'}}/>
               <h5 className='text-center'>Data Science and Analytics</h5>
               <ul>
   <li>Data Acquisition & Ingestion</li>
@@ -47,7 +52,7 @@ const Offering = () => {
               </div>
             <div className='grid-items-home'>
               <div>
-              <Image className='mx-auto d-block' src={Embedded} style={{width:'30%', height:'auto'}}/>
+              <Image className='mx-auto d-block' src={ai} style={{width:'30%', height:'auto'}}/>
               <h5 className='text-center'>AI and Computer Vision</h5>
               <ul>
   <li>Data Acquisition & Ingestion</li>
@@ -64,7 +69,7 @@ const Offering = () => {
               </div>
             <div className='grid-items-home'>
               <div>
-              <Image className='mx-auto d-block' src={Embedded} style={{width:'30%', height:'auto'}}/>
+              <Image className='mx-auto d-block' src={tools} style={{width:'30%', height:'auto'}}/>
               <h5 className='text-center'>Tools and Automation </h5>
               <ul>
   <li>Data Management Framework</li>
@@ -81,7 +86,7 @@ const Offering = () => {
               </div>
             <div className='grid-items-home'>
               <div>
-              <Image className='mx-auto d-block' src={Embedded} style={{width:'30%', height:'auto'}}/>
+              <Image className='mx-auto d-block' src={verification} style={{width:'30%', height:'auto'}}/>
               <h5 className='text-center'>Verification and validation</h5>
               <ul>
   <li>Test bench development</li>
@@ -99,7 +104,7 @@ const Offering = () => {
               </div>
             <div className='grid-items-home'> 
               <div>
-              <Image className='mx-auto d-block' src={Embedded} style={{width:'30%', height:'auto'}}/>
+              <Image className='mx-auto d-block' src={title} style={{width:'30%', height:'auto'}}/>
               <h5 className='text-center'>mortgage / title insurance service</h5>
 
               <ul>

@@ -1,17 +1,20 @@
 import React from "react";
-import logo from "../asserts/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdMail } from "react-icons/io";
 import { IoCall } from "react-icons/io5";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { MdChevronRight } from "react-icons/md";
-
 import { MdOutlineFacebook } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
+
+
+import logo from "../asserts/logo.jpg";
+
+
 
 export const Footer = () => {
   return (
@@ -22,7 +25,7 @@ export const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-3 col-sm-6">
-            <Image src={logo} alt="Logo" className="img-fluid mb-3" style={{width:"100px"}} />
+          <Image src={logo} alt="Logo" style={{ width: 'auto', height: '100px' }} />
             <p>
               BROWNEDGE TECHNOLOGY, a category-defining engineering solutions
               firm redefining core engineering problems in the Smart
@@ -53,7 +56,7 @@ export const Footer = () => {
           </div>
 
           <div className="col-md-3 col-sm-6">
-            <h5>Products</h5>
+            <h5>offering</h5>
             <ul className="list-unstyled">
               <li >
                 <Link
@@ -61,7 +64,7 @@ export const Footer = () => {
                   className="text-white text-decoration-none"
                 >
                   <MdChevronRight />
-                  Instrument Clusters
+                  Autosar
                 </Link>
               </li>
               <li>
@@ -69,7 +72,7 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Infotainment
+                  <MdChevronRight /> Attention maps
                 </Link>
               </li>
               <li>
@@ -77,7 +80,7 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Displays
+                  <MdChevronRight /> Adas
                 </Link>
               </li>
               <li>
@@ -85,7 +88,7 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Electrification
+                  <MdChevronRight /> Data analytics tools
                 </Link>
               </li>
               <li>
@@ -93,21 +96,54 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Domain Controller
+                  <MdChevronRight />  Sub cyber security engineering
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/Instrument Clusters"}
+                  className="text-white text-decoration-none"
+                >
+                  <MdChevronRight />  Validation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/Instrument Clusters"}
+                  className="text-white text-decoration-none"
+                >
+                  <MdChevronRight />  System requirements
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/Instrument Clusters"}
+                  className="text-white text-decoration-none"
+                >
+                  <MdChevronRight />  Software testing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/Instrument Clusters"}
+                  className="text-white text-decoration-none"
+                >
+                  <MdChevronRight />  Test authoring tool
                 </Link>
               </li>
             </ul>
           </div>
+          
 
           <div className="col-md-3 col-sm-6">
-            <h5>Pages</h5>
+            <h5>Solution</h5>
             <ul className="list-unstyled">
               <li>
                 <Link
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Home
+                  <MdChevronRight /> DMS - Algorithm/Computer Vision
                 </Link>
               </li>
               <li>
@@ -115,7 +151,7 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Company
+                  <MdChevronRight /> Ev - TMS & BMS
                 </Link>
               </li>
               <li>
@@ -123,7 +159,7 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Offering
+                  <MdChevronRight /> Can Stack Software
                 </Link>
               </li>
               <li>
@@ -131,7 +167,8 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> Career
+                  <MdChevronRight /> Diag Stack Software
+
                 </Link>
               </li>
               <li>
@@ -139,7 +176,8 @@ export const Footer = () => {
                   href={"/Instrument Clusters"}
                   className="text-white text-decoration-none"
                 >
-                  <MdChevronRight /> ContactUS
+                  <MdChevronRight /> BootLoader Software 
+
                 </Link>
               </li>
             </ul>

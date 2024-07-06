@@ -23,27 +23,28 @@ const Page = () => {
 
   return (
     <>
-      <div style={{ position: "relative" }}>
+      <div className="position-relative video-container">
+        <div className="embed-responsive embed-responsive-16by9">
+          <video
+            className="embed-responsive-item"
+            src="/carrer.mp4"
+            muted
+            autoPlay
+            loop
+          ></video>
+        </div>
         <div
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 75% 100%, 0% 100%)",
-            backgroundColor: "#974c01",
-            width: "80%",
-            height: "350px",
-          }}
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
         ></div>
-        <Image
-          src={bgcontact}
-          alt="image"
-          style={{
-            width: "auto",
-            height: "350px",
-            position: "absolute",
-            top: 0,
-            right: 0,
-            zIndex: -999,
-          }}
-        />
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+            Career
+          </h1>
+        </div>
       </div>
 
       <br />

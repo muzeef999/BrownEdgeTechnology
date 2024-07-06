@@ -17,55 +17,8 @@ const Page = () => {
 
   return (
     <>
-      {/* <div style={{ position: "relative" }}>
-        <div
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 75% 100%, 0% 100%)",
-            backgroundColor: "#974c01",
-            width: "80%",
-            height: "350px",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            color: "#FFF",
-          }}
-        >
-          {" "}
-          <h1>About us</h1>
-        </div>
-        <Image
-          src={bgcontact}
-          alt="image"
-          style={{
-            width: "auto",
-            height: "350px",
-            position: "absolute",
-            top: 0,
-            right: 0,
-            zIndex: -999,
-          }}
-        />
-      </div> */}
+     
     
-    <div className="video">
-      <video src='/aboutvid.mp4' muted autoPlay loop className='videoplayer about-video'></video>
-      
-         <div className='container sec'>
-          <br/>
-          <br/>
-          <div className='row  '>
-
-           
-          
-             <h1 style={{color:'#FFF', fontWeight:'500'}} className="about-data">About us</h1>
-             {/* <p style={{color:'#FFF', fontWeight:'700', fontSize:'35px'}}>Revolutionizing Smart Mobility with Cutting-Edge Engineering Solutions</p> */}
-       
-       
-    
-          </div>
-          </div>
-   
-    </div>
       <br />
       <br />
 
@@ -211,7 +164,21 @@ const Page = () => {
                     integration of digital and core engineering for a smarter,
                     more connected world.
                   </p>
-                  <p
+                  
+                </div>
+                <div className="col-md-6 d-flex justify-content-center align-items-center" style={{objectFit:"cover"}}>
+                  <Image src={gallery}  style={{
+            width: "100%",
+            height: "auto",
+            objectFit:"cover",
+            borderRadius:'20px'
+    
+       
+          }}/>
+                </div>
+              </div>
+
+              <p
                     style={{
                       color: "#964b00",
                       fontWeight: 600,
@@ -246,17 +213,6 @@ const Page = () => {
                       environmentally responsible.
                     </li>
                   </ul>
-                </div>
-                <div className="col-md-6 d-flex justify-content-center" style={{objectFit:"cover"}}>
-                  <Image src={gallery}  style={{
-            width: "100%",
-            height: "auto",
-            objectFit:"cover"
-    
-       
-          }}/>
-                </div>
-              </div>
               <br />
               <p
                 style={{ color: "#964b00", fontWeight: 600, fontSize: "30px" }}

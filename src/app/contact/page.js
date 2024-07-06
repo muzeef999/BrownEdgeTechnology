@@ -40,39 +40,30 @@ const Page = () => {
   };
   return (
     <>
-      <div style={{ position: "relative" }}>
-      <div className="video">
-      <video src='/contact.mp4' muted autoPlay loop className='videoplayer about-video'></video>
-      
-         <div className='container sec'>
-          <br/>
-          <br/>
-          <div className='row  '>
-
-           
-          
-             <h1 style={{color:'#FFF', fontWeight:'500'}} className="about-data">Contact Us</h1>
-             {/* <p style={{color:'#FFF', fontWeight:'700', fontSize:'35px'}}>Revolutionizing Smart Mobility with Cutting-Edge Engineering Solutions</p> */}
-       
-       
-    
-          </div>
-          </div>
-   
-    </div>
-        <Image
-          src={bgcontact}
-          alt="image"
-          style={{
-            width: "auto",
-            height: "350px",
-            position: "absolute",
-            top: 0,
-            right: 0,
-            zIndex: -999,
-          }}
-        />
+      <div className="position-relative video-container">
+        <div className="embed-responsive embed-responsive-16by9">
+          <video
+            className="embed-responsive-item"
+            src="/contact.mp4"
+            muted
+            autoPlay
+            loop
+          ></video>
+        </div>
+        <div
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        ></div>
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+            Contact Us
+          </h1>
+        </div>
       </div>
+
       <br />
       <div
         className="container"

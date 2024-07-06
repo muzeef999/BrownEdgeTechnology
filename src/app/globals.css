@@ -273,6 +273,31 @@ box-shadow:  5px 5px 10px #c3c3c3,
 
 
 
+.grid-container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 16px; /* Adjust the gap between grid items as needed */
+}
+
+.grid-item1 {
+  background: #f9f9f9; /* Add any background color or styling */
+  padding: 16px; /* Adjust padding as needed */
+  border: 1px solid #ddd; /* Optional: add border for better visualization */
+  border-radius: 8px; /* Optional: add border radius for rounded corners */
+  text-align: left; /* Center-align text within the grid item */
+}
+
+.grid-item h5 {
+  margin-top: 8px; /* Add margin to space out the title from the image */
+  color: #333; /* Optional: add color styling for the title */
+}
+
+.img-data{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 
 
 /* Naveen  */
@@ -345,4 +370,38 @@ bottom: -40px !important;
   position: absolute;
   left: 100px !important;
   bottom: 200px !important;
+}
+
+.embed-responsive-item{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Default height for larger screens */
+.video-container {
+  height: 56vh;
+}
+
+
+/* Adjust height for mobile devices */
+@media (max-width: 576px) {
+  .video-container {
+    height: 26vh; /* Increase this value as needed for mobile */
+  }
+  .embed-responsive-item{
+    height: 26vh;
+    object-fit: contain;
+  }
+}
+
+/* Adjust height for tablet devices */
+@media (min-width: 577px) and (max-width: 992px) {
+  .video-container {
+    height: 35vh; /* Increase this value as needed for tablets */
+  }
+  .embed-responsive-item{
+    height: 35vh;
+    object-fit: contain;
+  }
 }
