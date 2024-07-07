@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import blog from "./routers/blogs.js";
 import contact from "./routers/contact.js";
 import auth from "./routers/auth.js";
+import cors from "cors";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -12,8 +13,16 @@ const handle = app.getRequestHandler();
 
 connectDB();
 
+const corsOptions = {
+  origin: "https://www.brownedgetechnology.com",
+  optionsSuccessStatus: 200,
+};
+
 app.prepare().then(() => {
   const server = express();
+
+  // Apply CORS middleware to the Express server
+  server.use(cors(corsOptions));
 
   server.use(bodyParser.json());
 
