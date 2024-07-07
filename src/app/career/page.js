@@ -112,11 +112,12 @@ const Page = () => {
           >
             <h2 style={{ color: "#964B00" }}>What’s in it for you?</h2>
             <p>
-              Working at Visteon is a journey in which our employees can develop
-              their strengths and advance their careers while making a
-              difference globally. If you’re looking for an opportunity that
-              will change the world and how we interact with vehicles, join us.
-              Visteon is where the best technical talent creates the future.
+              Working at Brown Edge Technology is a journey in which our
+              employees can develop their strengths and advance their careers
+              while making a difference globally. If you’re looking for an
+              opportunity that will change the world and how we interact with
+              vehicles, join us. Brown Edge Technology is where the best
+              technical talent creates the future.
             </p>
             <br />
 
@@ -293,11 +294,11 @@ const Page = () => {
                     </h5>
                     <p class="card-text">
                       Contribute to a global organization, interacting with
-                      employees across 17 countries. Visteon is poised for
-                      growth, with large backlog of business and a growing base
-                      of top-tier OEM customers. Build your career in a growing
-                      company that has opportunities across multiple sites
-                      globally
+                      employees across 17 countries. Brown Edge Technology is
+                      poised for growth, with large backlog of business and a
+                      growing base of top-tier OEM customers. Build your career
+                      in a growing company that has opportunities across
+                      multiple sites globally
                     </p>
                   </div>
                 </div>
@@ -317,13 +318,13 @@ const Page = () => {
               Diversity and Inclusion Statement
             </h2>
             <p>
-              For Visteon, diversity represents an environment of open
-              communication where the contributions of all employees are valued.
-              As a multicultural organization, Visteon embraces human
-              differences and harnesses the power of its employees’ varied
-              backgrounds, cultures and experiences to create a competitive
-              edge. Visteon will continue to succeed by fully engaging the
-              diverse talents of all its employees.
+              For Brown Edge Technology, diversity represents an environment of
+              open communication where the contributions of all employees are
+              valued. As a multicultural organization, Brown Edge Technology
+              embraces human differences and harnesses the power of its
+              employees’ varied backgrounds, cultures and experiences to create
+              a competitive edge. Brown Edge Technology will continue to succeed
+              by fully engaging the diverse talents of all its employees.
             </p>
           </div>
           <div
@@ -351,13 +352,13 @@ const Page = () => {
                 <h3>Be a revolutionary</h3>
                 <p>
                   Today’s job seekers want to make a tangible, positive impact
-                  on the world. At Visteon, we’re changing the world in a number
-                  ofgreat ways. We’re uniquely positioned to capitalize on two
-                  significant industry trends – electric and autonomous
-                  vehicles. Our technology will completely change the way we
-                  interact with our vehicles, reduce the number of car accidents
-                  and fatalities, and make the world a cleaner place. We’re not
-                  just dreamers, we’re doers.
+                  on the world. At Brown Edge Technology, we’re changing the
+                  world in a number ofgreat ways. We’re uniquely positioned to
+                  capitalize on two significant industry trends – electric and
+                  autonomous vehicles. Our technology will completely change the
+                  way we interact with our vehicles, reduce the number of car
+                  accidents and fatalities, and make the world a cleaner place.
+                  We’re not just dreamers, we’re doers.
                 </p>
               </div>
               <div
@@ -373,11 +374,11 @@ const Page = () => {
                   Whether you’re an engineer, algorithm developer or a financial
                   analyst, you’ll see opportunities for professional development
                   and career advancement. If you’re passionate about advancing
-                  your career, Visteon is the place for you. We offer
-                  mentorships, rotational programs and education benefits. Our
-                  technical ladder program offers development in a range of
-                  engineering disciplines. At Visteon, it’s all within your
-                  reach.
+                  your career, Brown Edge Technology is the place for you. We
+                  offer mentorships, rotational programs and education benefits.
+                  Our technical ladder program offers development in a range of
+                  engineering disciplines. At Brown Edge Technology, it’s all
+                  within your reach.
                 </p>
               </div>
             </div>

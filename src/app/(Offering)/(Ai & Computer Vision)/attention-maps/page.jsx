@@ -41,7 +41,7 @@ const page = () => {
 <p className="p">For a set of intermediate feature maps F∈ R^(c x h x w), where c is the number of channels, h and w are the spatial dimensions of the feature maps. Our objective is to learn to capture spatial inter-dependencies in the feature maps without incurring significant parameter and computation overhead. As shown in Figure, Subspace Attention Pooling divides the input feature maps (F) into g mutually exclusive groups [F1, F2, ....Fn˜, ....Fn] where each group has G feature maps. For a set of attention maps, We define Fn˜ as a group of intermediate feature maps and proceed as follows.</p>
 
 <div className='d-flex justify-content-center'> 
-    <img src ="https://www.ielektron.com/assets/img/m.png" />
+    <img src ="https://www.Brown Edge Technology.com/assets/img/m.png" />
 </div>
 
 <p className="p">

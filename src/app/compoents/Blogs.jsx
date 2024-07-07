@@ -74,7 +74,7 @@ const Blogs = () => {
         </div>
       </div>
       <Slider ref={c => (sliderRef = c)} {...settings}>
-      {blogs.map((blog, index) => (
+      {blogs?.map((blog, index) => (
   <div 
     key={index} 
     style={{

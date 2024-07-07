@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Navabar from "./compoents/Navabar";
 import { Footer } from "./compoents/Footer";
 import { useEffect } from "react";
-import Style from "./Styles/responsive.css"
+import Style from "./Styles/responsive.css";
 export default function RootLayout({ children }) {
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
