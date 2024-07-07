@@ -68,13 +68,13 @@ const BlogPage = () => {
   <div className="grid-container1">
     {blog?.map((item) => (
       <div className="grid-item1" key={item._id}>
-        <Link href="/home">
+        <Link href="/home" style={{textDecoration:'none'}}>
           <img
             className="img-data"
-            src={item.img}
+            src={item.img} style={{borderTopLeftRadius:'8px', borderTopRightRadius:'8px'}}
             alt="image alt data"
           />
-          <h5 style={{textDecoration:'none'}}>{item.title}</h5>
+          <h5 className="grid-item-text" style={{textDecoration:'none'}}>{item.title}</h5>
         </Link>
       </div>
     ))}

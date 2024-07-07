@@ -280,14 +280,16 @@ box-shadow:  5px 5px 10px #c3c3c3,
 }
 
 .grid-item1 {
-  background: #f9f9f9; /* Add any background color or styling */
-  padding: 16px; /* Adjust padding as needed */
+  background: #FFF; /* Add any background color or styling */
   border: 1px solid #ddd; /* Optional: add border for better visualization */
   border-radius: 8px; /* Optional: add border radius for rounded corners */
   text-align: left; /* Center-align text within the grid item */
 }
 
-.grid-item h5 {
+.grid-item-text{
+  text-decoration: none;
+  
+  padding: 2px;
   margin-top: 8px; /* Add margin to space out the title from the image */
   color: #333; /* Optional: add color styling for the title */
 }

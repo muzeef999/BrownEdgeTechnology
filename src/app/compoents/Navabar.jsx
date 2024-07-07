@@ -145,11 +145,7 @@ const Navbar9 = () => {
                 <NavLink className={pathname=="/contact"?"design":""} href="/contact">Contact Us</NavLink>
               </NavItem>
             </Nav>
-            <form className="d-flex">
-              <Link href="/signIn">
-              <button  className="navbtn" type="submit">&nbsp;Login&nbsp;</button>
-              </Link>
-            </form>
+            
           </Navbar.Collapse>
         </Navbar>
       </Container>

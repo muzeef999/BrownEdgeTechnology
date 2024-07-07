@@ -134,7 +134,6 @@ export const Footer = () => {
             </ul>
           </div>
           
-
           <div className="col-md-3 col-sm-6">
             <h5>Solution</h5>
             <ul className="list-unstyled">
