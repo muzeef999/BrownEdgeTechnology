@@ -1,6 +1,10 @@
 "use client";
 import Image from "next/image";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> origin/main
 import { FaArrowRight, FaHome } from "react-icons/fa";
 import validation from "../asserts/validation.png";
 
@@ -20,6 +24,7 @@ const Page = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+<<<<<<< HEAD
   const [loader,setloader] = useState(false)
   useEffect(()=>{
     setloader(true)
@@ -31,6 +36,12 @@ const Page = () => {
         <div className="loader"></div>
       </div> : <div>
  <div className="position-relative video-container">
+=======
+
+  return (
+    <>
+      <div className="position-relative video-container">
+>>>>>>> origin/main
         <div className="embed-responsive embed-responsive-16by9">
           <video
             className="embed-responsive-item"
@@ -41,8 +52,13 @@ const Page = () => {
           ></video>
         </div>
         <div
+<<<<<<< HEAD
           // className="position-absolute w-100 h-100"
           // style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+=======
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+>>>>>>> origin/main
         ></div>
         <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
           <h1
@@ -393,9 +409,12 @@ const Page = () => {
         </div>
       </div>
       <br />
+<<<<<<< HEAD
  </div>
     }
 
+=======
+>>>>>>> origin/main
     </>
   );
 };

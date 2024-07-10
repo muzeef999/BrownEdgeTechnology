@@ -11,6 +11,10 @@ body {
   
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 .home-card {
   position: relative; /* Ensure it has a positioning context */
   z-index: 9; /* Make sure it's higher than the background image */
@@ -254,6 +258,12 @@ box-shadow:  5px 5px 10px #c3c3c3,
   margin-top: 150px !important;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> origin/main
 .grid-container-home{
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -267,6 +277,11 @@ box-shadow:  5px 5px 10px #c3c3c3,
              -5px -5px 10px #fdfdfd;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/main
 .grid-container1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -293,11 +308,16 @@ box-shadow:  5px 5px 10px #c3c3c3,
   height: 300px;
   object-fit: cover;
 }
+<<<<<<< HEAD
 .img-dat{
   width: 100%;
   height:auto;
   object-fit: cover;
 }
+=======
+
+
+>>>>>>> origin/main
 
 /* Naveen  */
 
@@ -404,6 +424,7 @@ bottom: -40px !important;
     object-fit: contain;
   }
 }
+<<<<<<< HEAD
 
 .loader {
   width: fit-content;
@@ -435,3 +456,5 @@ bottom: -40px !important;
 .img-data{
   object-fit: cover;
 }
+=======
+>>>>>>> origin/main
