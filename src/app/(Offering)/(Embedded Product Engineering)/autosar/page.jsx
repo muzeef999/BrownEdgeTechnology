@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"
 import React, { useEffect, useState } from 'react'
 import { FaArrowRight, FaHome } from "react-icons/fa";
@@ -12,6 +13,13 @@ const page = () => {
          !loader? <div className="loaderbox">
          <div className="loader"></div>
        </div> : <div>
+=======
+import React from 'react'
+import { FaArrowRight, FaHome } from "react-icons/fa";
+const page = () => {
+  return (
+    <div>
+>>>>>>> origin/main
    <div className="about">
         <div className="container">
           <h1>About US</h1>
@@ -70,9 +78,12 @@ const page = () => {
   <p>Customer were able to perform various real-time test scenarios on Vehicles and present a complete demonstratable output to OEMs.</p>
     </div>
     </div>
+<<<<<<< HEAD
     }
       
   </div>
+=======
+>>>>>>> origin/main
 
   )
 }

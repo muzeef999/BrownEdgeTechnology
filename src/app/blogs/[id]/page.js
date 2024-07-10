@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
@@ -133,8 +134,20 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
+=======
+import React from "react";
+
+const page = () => {
+  return (
+    <>
+      <h1>page id</h1>
+>>>>>>> origin/main
     </>
   );
 };
 
+<<<<<<< HEAD
 export default BlogPage;
+=======
+export default page;
+>>>>>>> origin/main

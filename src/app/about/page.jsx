@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> origin/main
 import bgcontact from "../asserts/aboutus.jpg";
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -7,11 +11,14 @@ import { FaArrowRight, FaHome } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import gallery from "../asserts/about.jpg"
 const Page = () => {
+<<<<<<< HEAD
 
   const [loader,setloader] = useState(false)
   useEffect(()=>{
     setloader(true)
   })
+=======
+>>>>>>> origin/main
   const [activeTab, setActiveTab] = useState("about-us");
 
   const router = useRouter();
@@ -22,12 +29,18 @@ const Page = () => {
 
   return (
     <>
+<<<<<<< HEAD
       
       {
          !loader? <div className="loaderbox">
          <div className="loader"></div>
        </div> :   <div>
    <br />
+=======
+     
+    
+      <br />
+>>>>>>> origin/main
       <br />
 
       <div className="container">
@@ -403,10 +416,13 @@ Corporate Giving Guidelines</h2>
       </div>
 
       <br />
+<<<<<<< HEAD
    </div>
       }
     
 
+=======
+>>>>>>> origin/main
     </>
   );
 };
