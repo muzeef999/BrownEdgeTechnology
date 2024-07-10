@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> origin/main
 import { Button, Col, Form, Row } from "react-bootstrap";
 import {
   FaArrowRight,
@@ -38,6 +42,7 @@ const Page = () => {
   const handleBlur = (field) => {
     setFocus((prevFocus) => ({ ...prevFocus, [field]: false }));
   };
+<<<<<<< HEAD
 
   const [loader,setloader] = useState(false)
   useEffect(()=>{
@@ -50,6 +55,11 @@ const Page = () => {
         <div className="loader"></div>
       </div> :<div>
      <div className="position-relative video-container">
+=======
+  return (
+    <>
+      <div className="position-relative video-container">
+>>>>>>> origin/main
         <div className="embed-responsive embed-responsive-16by9">
           <video
             className="embed-responsive-item"
@@ -206,9 +216,12 @@ const Page = () => {
       </div>
       <br />
       <br />
+<<<<<<< HEAD
      </div>
     }
      
+=======
+>>>>>>> origin/main
     </>
   );
 };

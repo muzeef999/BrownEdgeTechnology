@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"
 import React, { useEffect, useState } from 'react'
 import { FaArrowRight, FaHome } from "react-icons/fa";
@@ -13,6 +14,14 @@ const page = () => {
     !loader? <div className="loaderbox">
     <div className="loader"></div>
   </div> :<div>
+=======
+import React from 'react'
+import { FaArrowRight, FaHome } from "react-icons/fa";
+import { MdArrowRightAlt } from "react-icons/md";
+const page = () => {
+  return (
+   <div>
+>>>>>>> origin/main
         <div className="video">
       <video src='/validation.mp4' muted autoPlay loop className='videoplayer about-video'></video>
       
@@ -91,9 +100,12 @@ The flashing test involves validating the correct programming sequence,and upgra
 
       </div>
    </div>
+<<<<<<< HEAD
   }
 
 </div>
+=======
+>>>>>>> origin/main
   )
 }
 
