@@ -28,13 +28,9 @@ const BlogPage = () => {
   console.log(blog);
 
   if (loading) {
-<<<<<<< HEAD
     return <div className="loaderbox">
     <div className="loader"></div>
   </div>;
-=======
-    return <p>Loading...</p>;
->>>>>>> origin/main
   }
 
   if (error) {
@@ -62,11 +58,7 @@ const BlogPage = () => {
             style={{ color: "#FFF", fontWeight: "500" }}
             className="about-data"
           >
-<<<<<<< HEAD
             Blogsss
-=======
-            Blogs
->>>>>>> origin/main
           </h1>
         </div>
       </div>
@@ -78,11 +70,7 @@ const BlogPage = () => {
   <div className="grid-container1">
     {blog?.map((item) => (
       <div className="grid-item1" key={item._id}>
-<<<<<<< HEAD
         <Link href={`blogs/${item._id}`} style={{textDecoration:'none'}}>
-=======
-        <Link href="/home" style={{textDecoration:'none'}}>
->>>>>>> origin/main
           <img
             className="img-data"
             src={item.img} style={{borderTopLeftRadius:'8px', borderTopRightRadius:'8px'}}
