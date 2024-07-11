@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 "use client";
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
-const BlogPage = () => {
+const Page = () => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
@@ -113,7 +112,7 @@ const BlogPage = () => {
           {
               blogs.map((item)=>{
                 return(
-                 <div className="d-flex">
+                 <div key={item.id} className="d-flex">
                      <div className="col-md-6 d-grid">
                         <img onClick={()=>senddata(item)}
             className="img-data img-datas"
@@ -134,20 +133,8 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
-=======
-import React from "react";
-
-const page = () => {
-  return (
-    <>
-      <h1>page id</h1>
->>>>>>> origin/main
     </>
   );
 };
 
-<<<<<<< HEAD
-export default BlogPage;
-=======
-export default page;
->>>>>>> origin/main
+export default Page;

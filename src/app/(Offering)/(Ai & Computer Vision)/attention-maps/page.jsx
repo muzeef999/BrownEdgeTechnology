@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { FaArrowRight, FaHome } from "react-icons/fa";
-const page = () => {
+const Page = () => {
   const [loader,setloader] = useState(false)
   useEffect(()=>{
     setloader(true)
@@ -73,4 +73,4 @@ Here, U and V are attention parameters. We approximate the attention map Amap as
   )
 }
 
-export default page
+export default Page

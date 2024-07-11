@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaArrowRight, FaHome } from "react-icons/fa";
 import { MdArrowRightAlt } from "react-icons/md";
-const page = () => {
+const Page = () => {
   const [loader,setloader] = useState(false)
   useEffect(()=>{
     setloader(true)
@@ -97,4 +97,4 @@ The flashing test involves validating the correct programming sequence,and upgra
   )
 }
 
-export default page
+export default Page

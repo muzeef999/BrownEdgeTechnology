@@ -1,7 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { FaArrowRight, FaHome } from "react-icons/fa";
-const page = () => {
+
+
+const Page = () => {
   const [loader,setloader] = useState(false)
   useEffect(()=>{
     setloader(true)
@@ -214,4 +216,4 @@ Enclosure Dimension
   )
 }
 
-export default page
+export default Page
