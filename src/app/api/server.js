@@ -32,7 +32,7 @@ app.prepare().then(() => {
     res.send("welcome to brown edge technology");
   });
 
-  server.use("/api/blogs", blogRouter);
+  server.use("/api", blogRouter);
   server.use("/api/auth", authRouter);
   server.use("/api/contact", contactRouter);
 
