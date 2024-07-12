@@ -19,7 +19,7 @@ app.prepare().then(() => {
   // Use CORS middleware with options
   server.use(
     cors({
-      origin: "https://www.brownedgetechnology.com/", // Replace with your frontend domain
+      origin: process.env.DOMAIN || 'https://www.brownedgetechnology.com',
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
       optionsSuccessStatus: 204,
@@ -45,8 +45,8 @@ app.prepare().then(() => {
     res.status(500).send({ message: err.message });
   });
 
-  server.listen(3000, (err) => {
+  server.listen(process.env.PORT || 80, (err) => {
     if (err) throw err;
-    console.log("> Ready on http://localhost:3000");
+    console.log(`> Ready on ${process.env.DOMAIN || 'https://www.brownedgetechnology.com'}`);
   });
 });
