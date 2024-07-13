@@ -5,6 +5,11 @@ import axios from 'axios';
 import Slider from "react-slick";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+import { API_URL } from '../config'; // Update the path as necessary
+
+
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +19,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('/api/blogs');
+        const response = await axios.get(`${API_URL}/blogs`);
         setBlogs(response.data.blogs);
         setLoading(false);
       } catch (err) {
