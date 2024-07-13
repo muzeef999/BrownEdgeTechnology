@@ -435,3 +435,14 @@ bottom: -40px !important;
 .img-data{
   object-fit: cover;
 }
+
+
+.page-transition {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+  z-index: 999;
+}
