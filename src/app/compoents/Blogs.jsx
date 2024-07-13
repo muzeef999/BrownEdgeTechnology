@@ -5,9 +5,8 @@ import axios from 'axios';
 import Slider from "react-slick";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-import { API_URL } from '../config'; // Update the path as necessary
+import { API_URL } from '../config.js'; // Update the path as necessary
 
 
 const Blogs = () => {
