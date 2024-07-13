@@ -1,9 +1,18 @@
 import React from "react";
+import { Sidebar } from "../../compoents/Sidebar";
+import "../../Styles/Sidebar.css"
 
 const page = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="d-flex">
+      
+      <Sidebar />
+
+      <h1 className="dai">Dashboard</h1>
+      <h1 className="dai">Dashboard</h1>
+      <h1 className="dai">Dashboard</h1>
+      <h1 className="dai">Dashboard</h1>
+      
     </div>
   );
 };

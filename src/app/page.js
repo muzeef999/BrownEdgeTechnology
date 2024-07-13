@@ -5,6 +5,7 @@ import HeroSection from "./compoents/HeroSection";
 import Offering from "./compoents/Offering";
 import Services from "./compoents/Services";
 import { DiVim } from "react-icons/di";
+import { Clients } from "./compoents/Clients";
 
 export default function Home() {
   const [loader, setloader] = useState(false);
@@ -47,6 +48,10 @@ export default function Home() {
           </div>
           <br />
           <br />
+
+          <Clients/>
+          <br/>
+          <br/>
         </>
       )}
     </div>

@@ -58,7 +58,7 @@ const BlogPage = () => {
             style={{ color: "#FFF", fontWeight: "500" }}
             className="about-data"
           >
-            Blogsss
+            Blogs
           </h1>
         </div>
       </div>
@@ -82,6 +82,8 @@ const BlogPage = () => {
     ))}
   </div>
 </div>
+<br/>
+<br/>
 
     </>
   );

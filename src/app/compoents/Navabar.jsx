@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Dropdown, Nav, Navbar, NavItem, NavLink } from 'react-bootstrap';
 import Image from 'next/image';
 import logo from "../asserts/logo.jpg";
 import { usePathname } from 'next/navigation';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const DropdownSubMenu = ({ title, children }) => {
   const [dropdownShow, setDropdownShow] = useState(false);
@@ -32,20 +30,23 @@ const DropdownSubMenu = ({ title, children }) => {
 
 const Navbar9 = () => {
   const pathname = usePathname();
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-out-cubic',
-      });
-    }
+    setLoaded(true);
   }, []);
 
   return (
     <div 
-      data-aos="fade-down"
-      style={{ position: 'fixed', top: '0', zIndex: '999', width: '100%' }}
+      style={{ 
+        position: 'fixed', 
+        top: '0', 
+        zIndex: '999', 
+        width: '100%',
+        opacity: loaded ? 1 : 0,
+        transform: loaded ? 'translateY(0)' : 'translateY(-20px)',
+        transition: 'opacity 0.5s ease, transform 0.5s ease'
+      }}
     >
       <Container>
         <Navbar

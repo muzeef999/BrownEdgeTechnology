@@ -1,13 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { IoIosAdd, IoIosCreate, IoIosTrash } from "react-icons/io";
-import bgcontact from "../../asserts/aboutus.jpg";
 
 // Dynamically import ReactQuill with no SSR
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
+import { Sidebar } from "../../compoents/Sidebar";
 
 const Page = () => {
   const [blogs, setBlogs] = useState([]);
@@ -122,31 +121,8 @@ const Page = () => {
   };
 
   return (
-    <>
-      <div style={{ position: "relative" }}>
-        <div
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 75% 100%, 0% 100%)",
-            backgroundColor: "#974c01",
-            width: "80%",
-            height: "350px",
-          }}
-        ></div>
-
-        <Image
-          src={bgcontact}
-          alt="image"
-          layout="fill"
-          objectFit="cover"
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            zIndex: -999,
-          }}
-        />
-      </div>
-
+    <div className="pageContainer">
+    <Sidebar />
       <div className="container">
         <form onSubmit={handleSubmit}>
           <div className="my-3 mb-3">
@@ -240,7 +216,7 @@ const Page = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

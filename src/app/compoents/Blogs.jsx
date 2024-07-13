@@ -6,8 +6,6 @@ import Slider from "react-slick";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 
-import { API_URL } from '../config.js'; // Update the path as necessary
-
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -18,7 +16,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get(`${API_URL}/blogs`);
+        const response = await axios.get(`/api/blogs`);
         setBlogs(response.data.blogs);
         setLoading(false);
       } catch (err) {
