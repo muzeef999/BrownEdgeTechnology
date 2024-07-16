@@ -3,7 +3,6 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
   "scripts": {  
   "dev": "nodemon src/app/api/server.js",
   "build": "next build",
