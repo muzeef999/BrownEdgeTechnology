@@ -38,7 +38,7 @@ app.prepare().then(() => {
   server.use("/api/contact", contactRouter);
 
   // Use Next.js to handle requests
-  server.all("*", (req, res) => {
+  server.get("*", (req, res) => {
     return handle(req, res);
   });
 
