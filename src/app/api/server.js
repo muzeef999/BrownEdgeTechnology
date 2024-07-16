@@ -7,7 +7,7 @@ import blogRouter from "./routers/blogs.js";
 import contactRouter from "./routers/contact.js";
 import authRouter from "./routers/auth.js";
 
-const dev = process.env.NODE_ENV!== "production";
+const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
@@ -27,16 +27,18 @@ app.prepare().then(() => {
 
   server.use(bodyParser.json());
 
+  // Remove these lines, as Next.js will handle the routing
   server.get("/api/hello", (req, res) => {
     res.send("welcome to brown edge technology");
   });
 
+  // Remove these lines, as Next.js will handle the routing
   server.use("/api", blogRouter);
   server.use("/api/auth", authRouter);
   server.use("/api/contact", contactRouter);
 
   // Use Next.js to handle requests
-  server.use((req, res) => {
+  server.get("*", (req, res) => {
     return handle(req, res);
   });
 
