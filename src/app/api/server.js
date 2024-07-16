@@ -38,7 +38,7 @@ app.prepare().then(() => {
   server.use("/api/contact", contactRouter);
 
   // Use Next.js to handle requests
-  server.get("*", (req, res) => {
+  server.all("*", (req, res) => {
     return handle(req, res);
   });
 
@@ -47,8 +47,9 @@ app.prepare().then(() => {
     res.status(500).send({ message: err.message });
   });
 
-  server.listen(8000, (err) => {
+  const port = process.env.PORT || 3000;
+  server.listen(port, (err) => {
     if (err) throw err;
-    console.log("> Ready on http://localhost:8000");
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
