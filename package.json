@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3000",
-  "scripts": {
-    "dev": "nodemon src/app/api/server.js",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "scripts": {  
+  "dev": "nodemon src/app/api/server.js",
+  "build": "next build",
+  "start": "PORT=8000 next start",
+  "lint": "next lint"
   },
   "dependencies": {
     "aos": "^2.3.4",

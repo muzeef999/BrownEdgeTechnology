@@ -7,7 +7,7 @@ import blogRouter from "./routers/blogs.js";
 import contactRouter from "./routers/contact.js";
 import authRouter from "./routers/auth.js";
 
-const dev = process.env.NODE_ENV !== "production";
+const dev = process.env.NODE_ENV!== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
@@ -35,7 +35,8 @@ app.prepare().then(() => {
   server.use("/api/auth", authRouter);
   server.use("/api/contact", contactRouter);
 
-  server.all("*", (req, res) => {
+  // Use Next.js to handle requests
+  server.use((req, res) => {
     return handle(req, res);
   });
 
@@ -44,8 +45,8 @@ app.prepare().then(() => {
     res.status(500).send({ message: err.message });
   });
 
-  server.listen(3000, (err) => {
+  server.listen(8000, (err) => {
     if (err) throw err;
-    console.log("> Ready on http://localhost:3000");
+    console.log("> Ready on http://localhost:8000");
   });
 });
