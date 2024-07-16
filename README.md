@@ -1,1 +1,1 @@
-"added seo things releasd one"
+"added seo things releasd one"npm 
