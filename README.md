@@ -1,1 +1,1 @@
-"added seo things releasd one"npm 
+"added seo things releasd one npm" 
