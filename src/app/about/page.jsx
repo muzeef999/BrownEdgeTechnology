@@ -27,7 +27,29 @@ const Page = () => {
          !loader? <div className="loaderbox">
          <div className="loader"></div>
        </div> :   <div>
-   <br />
+       <div className="position-relative video-container">
+        <div className="embed-responsive embed-responsive-16by9">
+          <video
+            className="embed-responsive-item"
+            src="/about.mp4"
+            muted
+            autoPlay 
+            loop
+          ></video>
+        </div>
+        <div
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        ></div>
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+            About Us
+          </h1>
+        </div>
+      </div>
       <br />
 
       <div className="container">
@@ -405,8 +427,6 @@ Corporate Giving Guidelines</h2>
       <br />
    </div>
       }
-    
-
     </>
   );
 };

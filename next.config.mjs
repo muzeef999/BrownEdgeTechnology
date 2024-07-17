@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'https://brownedgetechnology.netlify.app', // Your specific domain
+            value: 'https://www.brownedgetechnology.com', // Your specific domain
           },
           {
             key: 'Access-Control-Allow-Methods',

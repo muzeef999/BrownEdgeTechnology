@@ -74,12 +74,13 @@ const offerings = [
   },
   {
     image: title,
-    title: "Mortgage / Title Insurance Service",
+    title: "Title Insurance Service",
     description: [
-      "Home loan origination and processing",
-      "Title search and examination",
-      "Title insurance issuance",
-      "Mortgage refinancing services"
+      "Title Search and Examination Reports",
+      "Commitment and Title Report Typing",
+      "Policy Typing /  Data Entry",
+      "Updates | Bring to Dates | Date Down",
+      "Tax certification, along with legal typing and easement plotting"
     ],
     aos: "fade-left",
     delay: 1000,

@@ -19,7 +19,7 @@ app.prepare().then(() => {
   // Use CORS middleware with options
   server.use(
     cors({
-      origin: "https://brownedgetechnology.netlify.app",
+      origin: "https://www.brownedgetechnology.com",
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       allowedHeaders: ['Content-Type', 'Authorization'],
     })
