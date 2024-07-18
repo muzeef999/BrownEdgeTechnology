@@ -4,10 +4,11 @@ export default {
     return [
       {
         source: '/api/:path*', // Match any path after /api/
-        destination: '/.netlify/functions/:path*', // Redirect to Netlify functions
+        destination: '/api/:path*', // Redirect to Next.js API routes
       },
-      // Add other rewrites here if needed
     ];
   },
-  useFileSystemPublicRoutes: true,
+  useFileSystemPublicRoutes: ({ req, vars, params }) => {
+    return !req.url.startsWith('/api');
+  },
 };
