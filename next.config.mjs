@@ -1,27 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  async headers() {
+export default {
+  async rewrites() {
     return [
       {
-        // Match all routes
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: 'https://www.brownedgetechnology.com', // Your specific domain
-          },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-          },
-          {
-            key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type, Authorization',
-          },
-        ],
+        source: '/api/:path*', // Match any path after /api/
+        destination: '/.netlify/functions/:path*', // Redirect to Netlify functions
       },
+      // Add other rewrites here if needed
     ];
   },
+  useFileSystemPublicRoutes: false,
 };
-
-export default nextConfig;
