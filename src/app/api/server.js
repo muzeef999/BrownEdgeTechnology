@@ -7,25 +7,23 @@ import blogRouter from "./routers/blogs.js";
 import contactRouter from "./routers/contact.js";
 import authRouter from "./routers/auth.js";
 
+
+
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
+
+const port = process.env.PORT || 3000;
 
 connectDB();
 
 app.prepare().then(() => {
   const server = express();
+   server.use(bodyParser.json());
+  server.use(cors());
+  server.use(express.json());
+  server.use(express.urlencoded({ extended: false }));
 
-  // Use CORS middleware with options
-  server.use(
-    cors({
-      origin: "https://www.brownedgetechnology.com",
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      allowedHeaders: ['Content-Type', 'Authorization'],
-    })
-  );
-
-  server.use(bodyParser.json());
 
   // Remove these lines, as Next.js will handle the routing
   server.get("/api/hello", (req, res) => {
@@ -38,7 +36,7 @@ app.prepare().then(() => {
   server.use("/api/contact", contactRouter);
 
   // Use Next.js to handle requests
-  server.all("*", (req, res) => {
+  server.get("*", (req, res, next) => {
     return handle(req, res);
   });
 
@@ -47,9 +45,13 @@ app.prepare().then(() => {
     res.status(500).send({ message: err.message });
   });
 
-  const port = process.env.PORT || 3000;
-  server.listen(port, (err) => {
-    if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+
+
+  server.listen(port, () => {
+    console.log(`Server Listening to port ${port}`);
   });
+})
+.catch((ex) => {
+  console.error(ex.stack);
+  process.exit(1);
 });
