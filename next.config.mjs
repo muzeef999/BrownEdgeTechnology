@@ -9,5 +9,5 @@ export default {
       // Add other rewrites here if needed
     ];
   },
-  useFileSystemPublicRoutes: false,
+  useFileSystemPublicRoutes: true,
 };
