@@ -3,5 +3,5 @@ export default {
   publicRuntimeConfig: {
     API_URL: process.env.API_URL,
   },
-  useFileSystemPublicRoutes: true,
+  useFileSystemPublicRoutes: false,
 };
