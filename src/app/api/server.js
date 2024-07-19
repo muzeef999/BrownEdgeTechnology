@@ -23,6 +23,7 @@ app.prepare().then(() => {
   server.use(cors());
   server.use(express.json());
   server.use(express.urlencoded({ extended: false }));
+  
 
 
   // Remove these lines, as Next.js will handle the routing
