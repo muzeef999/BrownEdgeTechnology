@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node src/app/api/server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "node src/app/api/server.js",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {

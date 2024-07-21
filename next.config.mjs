@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-export default {
+const nextConfig = {
   publicRuntimeConfig: {
     API_URL: process.env.API_URL,
   },
@@ -12,3 +12,5 @@ export default {
     ];
   }
 };
+
+module.exports = nextConfig;
