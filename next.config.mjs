@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+export default {
   publicRuntimeConfig: {
     API_URL: process.env.API_URL,
   },
+  useFileSystemPublicRoutes: true,
   async rewrites() {
     return [
       {
@@ -12,5 +13,3 @@ const nextConfig = {
     ];
   }
 };
-
-module.exports = nextConfig;
