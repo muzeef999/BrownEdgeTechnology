@@ -27,9 +27,8 @@ app.prepare().then(() => {
 
 
   // Remove these lines, as Next.js will handle the routing
-  server.get("/api/hello", (req, res) => {
-    res.send("welcome to brown edge technology");
-  });
+  server.get("/", (req, res) => res.send("sorry for  incovision we are updating website "));
+
 
   // Remove these lines, as Next.js will handle the routing
   server.use("/api", blogRouter);
