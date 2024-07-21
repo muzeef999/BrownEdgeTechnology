@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --server src/app/api/server.js",
+    "dev": "cross-env NODE_ENV=development node src/app/api/server.js",
     "build": "next build",
-    "start": "node src/app/api/server.js",
+    "start": "cross-env NODE_ENV=production node src/app/api/server.js",
     "lint": "next lint"
-},
+  },
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^1.7.2",

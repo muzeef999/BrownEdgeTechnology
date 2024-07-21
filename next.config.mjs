@@ -3,7 +3,7 @@ export default {
   publicRuntimeConfig: {
     API_URL: process.env.API_URL,
   },
-  exportTrailingSlash: false,
+  useFileSystemPublicRoutes: false,
   async rewrites() {
     return [
       {
