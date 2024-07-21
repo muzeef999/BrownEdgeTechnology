@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "concurrently \"next dev\" \"node src/app/api/server.js\"",
-  "build": "next build",
-  "start": "node src/app/api/server.js",
-  "lint": "next lint"
+    "dev": "next dev --server src/app/api/server.js",
+    "build": "next build",
+    "start": "node src/app/api/server.js",
+    "lint": "next lint"
 },
   "dependencies": {
     "aos": "^2.3.4",
