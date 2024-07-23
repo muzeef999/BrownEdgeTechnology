@@ -4,7 +4,7 @@ import { Sidebar } from "../../compoents/Sidebar";
 import "../../Styles/sidebar.css"
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
   const token = localStorage.getItem("token")
   const router = useRouter()
   useEffect(()=>{
@@ -26,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
