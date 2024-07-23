@@ -74,13 +74,12 @@ const offerings = [
   },
   {
     image: title,
-    title: "Title Insurance Service",
+    title: "Mortgage / Title Insurance Service",
     description: [
-      "Title Search and Examination Reports",
-      "Commitment and Title Report Typing",
-      "Policy Typing /  Data Entry",
-      "Updates | Bring to Dates | Date Down",
-      "Tax certification, along with legal typing and easement plotting"
+      "Home loan origination and processing",
+      "Title search and examination",
+      "Title insurance issuance",
+      "Mortgage refinancing services"
     ],
     aos: "fade-left",
     delay: 1000,
@@ -107,9 +106,9 @@ const Offering = () => {
       </center>
       <br /><br />
 
-      <div className='grid-container-home' data-aos="fade-up" data-aos-delay="200">
+      <div className='grid-container-home' data-aos="fade-up" data-aos-delay="200" style={{overflowX:"hidden"}}>
         {offerings.map(({ image, title, description, aos, delay }, index) => (
-          <div className='grid-items-home' key={index} data-aos={aos} data-aos-delay={delay}>
+          <div className='grid-items-home' key={index} data-aos={aos} data-aos-delay={delay} style={{overflowX:"hidden"}}>
             <br />
             <Image className='mx-auto d-block' src={image} style={{ width: '30%', height: 'auto' }} />
             <h5 className='text-center p-3'>{title}</h5>

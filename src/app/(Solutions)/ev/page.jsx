@@ -38,7 +38,7 @@ const Page = () => {
       </div>
 
       <div className="container my-3">
-        <h2 className='text-center mb-3'>EV – Traction Motor & BMS Software development</h2>
+        <h2 className='text-center mb-3'></h2>
 
         <h2 style={{color:" #964B00"}}>Problem Overview</h2>
         <p className='p'>BrownEdge Technology has developed a Traction Motor control and Battery Management System solution for 2W/3W Electric Vehicle requirements. The platform shall be targeted to support easy customization and quick implementation for all EV requirements.</p>

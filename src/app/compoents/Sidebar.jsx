@@ -17,8 +17,8 @@ export const Sidebar = () => {
         <ul>
           <li><Link href="#">Dashboard</Link></li>
           <li><Link href="/postBlog">Blogs</Link></li>
-          <li><Link href="#">Careers</Link></li>
-          <li><Link href="#">Contac Us</Link></li>
+          <li><Link href="/carrear">Careers</Link></li>
+          {/* <li><Link href="#">Contac Us</Link></li> */}
           <li><Link href="#">Document</Link></li>
         </ul>
         <button className="toggle-btn" onClick={toggleSidebar}>

@@ -28,11 +28,11 @@
     font-size: 18px;
   }
 
-  .menu a:hover {
+  /* .menu a:hover {
     padding: 20px 10px;
     background-color:#964b00 ;
     color: #FFF;
-  }
+  } */
 
   .toggle-btn {
     background-color: #964b00;

@@ -1,5 +1,6 @@
 body {
   width: 100%;
+  overflow-x: hidden !important;
 }
 
 .navbtn {
@@ -507,4 +508,85 @@ bottom: -40px !important;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+/* my css */
+.menu ul{
+  margin-top: 120px !important;
+}
+.menu ul li {
+  border-radius: 10px;
+  background: #f6f2f2;
+  box-shadow:  5px 5px 20px #bcbcbc,
+               -5px -5px 20px #ffffff;
+               padding: 5px 30px;
+               margin-bottom:35px !important;
+
+}
+.menu ul li:hover{
+  background-color: red;
+}
+.menubar{
+align-items: flex-start !important;
+position: sticky !important;
+top: 0px !important;
+display: flex !important;
+height: 100vh;
+
+}
+.dashboard-contain{
+  width: 80% !important;
+  margin-left: 20% !important;
+}
+.toggle-btn{
+  border-radius: 10px;
+  background: #f6f2f2;
+  box-shadow:  5px 5px 20px #bcbcbc,
+               -5px -5px 20px #ffffff;
+               padding: 5px 30px;
+               margin-bottom:35px !important;
+
+}
+.apply div span{
+  font-size: 18px !important;
+
+}
+.apply div{
+  margin-bottom:10px !important; 
+
+}
+.apply{
+  border-radius: 22px;
+background: #ffffff;
+box-shadow:  5px 5px 10px #efebeb,
+             -5px -5px 10px #ffffff; 
+             height: 350px;
+             overflow: scroll;
+             overflow-x: hidden;
+}
+.offcanvas-nav{
+  display: none !important;
+}
+table{
+  overflow-x: scroll !important;
+  width: 100% !important;
+}
+.row div{
+  overflow-x: hidden  !important;
+}
+.col-md-6{
+  overflow-x: hidden  !important;
+}
+video .videoplayer{
+  width: 100px !important;
+}
+
+img.blog-img{
+  width: 95% !important;
+  height: 300px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

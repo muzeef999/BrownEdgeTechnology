@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon src/app/api/index.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production nodemon src/app/api/index.js",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {

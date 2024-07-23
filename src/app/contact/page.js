@@ -55,7 +55,7 @@ const Page = () => {
             className="embed-responsive-item"
             src="/contact.mp4"
             muted
-            autoPlay 
+            autoPlay
             loop
           ></video>
         </div>

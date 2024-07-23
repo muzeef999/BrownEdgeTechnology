@@ -20,7 +20,7 @@ const Services = () => {
           <div className='row'>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-right"
+              data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <div>
                 <h1>Automotive</h1>
@@ -29,7 +29,7 @@ const Services = () => {
             </div>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-left"
+              data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <Image src={automative} style={{ width: '100%', height: 'auto' }} />
             </div>
@@ -42,13 +42,13 @@ const Services = () => {
           <div className='row'>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-right"
+              data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <Image src={integration} style={{ width: '100%', height: 'auto' }} />
             </div>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-left"
+              data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <div>
                 <h1>Integration</h1>
@@ -64,7 +64,7 @@ const Services = () => {
           <div className='row'>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-right"
+              data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <div>
                 <h1>Cyber Security</h1>
@@ -73,7 +73,7 @@ const Services = () => {
             </div>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-left"
+              data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <Image src={security} style={{ width: '70%', height: 'auto' }} />
             </div>
@@ -86,13 +86,13 @@ const Services = () => {
           <div className='row'>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-right"
+              data-aos="fade-right" style={{overflow:"hidden"}}
             >
               <Image src={development} style={{ width: '70%', height: 'auto' }} />
             </div>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-left"
+              data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <div>
                 <h1>Development</h1>
@@ -108,7 +108,7 @@ const Services = () => {
           <div className='row'>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-right"
+              data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <div>
                 <h1>Verification & Validation</h1>
@@ -117,7 +117,7 @@ const Services = () => {
             </div>
             <div 
               className='col-md-6 d-flex justify-content-center align-items-center' 
-              data-aos="fade-left"
+              data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <Image src={verification} style={{ width: '100%', height: 'auto' }} />
             </div>

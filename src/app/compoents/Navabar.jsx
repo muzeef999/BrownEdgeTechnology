@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import { Container, Dropdown, Nav, Navbar, NavItem, NavLink } from 'react-bootstrap';
 import Image from 'next/image';
 import logo from "../asserts/logo.jpg";
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-
 
 const DropdownSubMenu = ({ title, children }) => {
   const [dropdownShow, setDropdownShow] = useState(false);
 
-  const onDropdownEnter = () => {
-    setDropdownShow(true);
-  };
+  const onDropdownEnter = () => setDropdownShow(true);
+  const onDropdownLeave = () => setDropdownShow(false);
 
-  const onDropdownLeave = () => {
-    setDropdownShow(false);
-  };
- 
   return (
     <Dropdown
       onMouseEnter={onDropdownEnter}
@@ -35,10 +29,25 @@ const DropdownSubMenu = ({ title, children }) => {
 };
 
 const Navbar9 = () => {
-  const pathname = usePathname()
-  console.log(pathname)
+  const pathname = usePathname();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   return (
-    <div style={{ position: 'fixed', top: '0', zIndex: '999', width: '100%' }}>
+    <div 
+      style={{ 
+        position: 'fixed', 
+        top: '0', 
+        zIndex: '999', 
+        width: '100%',
+        opacity: loaded ? 1 : 0,
+        transform: loaded ? 'translateY(0)' : 'translateY(-20px)',
+        transition: 'opacity 0.5s ease, transform 0.5s ease'
+      }}
+    >
       <Container>
         <Navbar
           expand="lg"
@@ -49,22 +58,20 @@ const Navbar9 = () => {
             borderBottomRightRadius: '22px',
             marginTop: '-10px',
             padding: "0px 15px",
-            boxShadow:
-      "0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.2)", 
-  
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.2)",
           }}
         >
           <Navbar.Brand href="#">
-            <Image src={logo} alt="Logo" style={{ width: 'auto', height: '100px' }} />
+            <Image src={logo} alt="Logo" style={{ width: 'auto', height: '100px' }} className='img_logo'/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarSupportedContent" />
           <Navbar.Collapse id="navbarSupportedContent">
             <Nav className="mx-auto mb-2 mb-lg-0">
               <NavItem>
-                <NavLink className={pathname=="/"?"design":""} href="/" active>Home</NavLink>
+                <NavLink className={pathname === "/" ? "design" : ""} href="/" active>Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className={pathname=="/about"?"design":""} href="/about">About Us</NavLink>
+                <NavLink className={pathname === "/about" ? "design" : ""} href="/about">About Us</NavLink>
               </NavItem>
               <Dropdown as={NavItem} >
                 <Dropdown.Toggle as={NavLink} id="offeringDropdown">
@@ -109,15 +116,11 @@ const Navbar9 = () => {
 
                   <DropdownSubMenu title="Verification & Validation">
                     <Dropdown.Item href="system-validation">System Validation - ADAS</Dropdown.Item>
-                    <Dropdown.Item href="#">Software Testing</Dropdown.Item>
+                    <Dropdown.Item href="softwaretesting">Software Testing</Dropdown.Item>
                   </DropdownSubMenu>
                 </Dropdown.Menu>
               </Dropdown>
              
-
-             {/* start */}
-
-
               <Dropdown as={NavItem} >
                 <Dropdown.Toggle as={NavLink} id="offeringDropdown">
                   Solutions
@@ -130,22 +133,19 @@ const Navbar9 = () => {
         <Dropdown.Item href="/bootloader-on-can">BootLoader Software</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-         
-
-
-
-
               <NavItem>
-                <NavLink className={pathname=="/career"?"design":""} href="/career">Careers</NavLink>
+                <NavLink className={pathname === "/career" ? "design" : ""} href="/career">Careers</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className={pathname=="/blogs"?"design":""} href="/blogs">Blogs</NavLink>
+                <NavLink className={pathname === "/blogs" ? "design" : ""} href="/blogs">Blogs</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className={pathname=="/contact"?"design":""} href="/contact">Contact Us</NavLink>
+                <NavLink className={pathname === "/contact" ? "design" : ""} href="/contact">Contact Us</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className={pathname === "/contact" ? "design" : ""} href="/signIn"><button>Admin</button></NavLink>
               </NavItem>
             </Nav>
-            
           </Navbar.Collapse>
         </Navbar>
       </Container>
@@ -153,4 +153,4 @@ const Navbar9 = () => {
   );
 };
 
-export default Navbar9;
+export default Navbar9;

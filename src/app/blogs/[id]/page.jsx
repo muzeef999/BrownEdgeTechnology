@@ -13,12 +13,12 @@ const Page = () => {
   useEffect(() => {
     const getBlogsData = async () => {
       try {
-        const response = await fetch(`/api/blogs`);
+        const response = await fetch(`https://node-bqys.onrender.com/user/get`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const jsonData = await response.json();
-        setBlogs(jsonData.blogs);
+        setBlogs(jsonData);
         setLoading(false);
       } catch (error) {
         console.error('Failed to fetch blog data:', error);
@@ -112,7 +112,7 @@ const Page = () => {
           {
               blogs.map((item)=>{
                 return(
-                 <div key={item.id} className="d-flex">
+                 <div key={item._id} className="d-flex">
                      <div className="col-md-6 d-grid">
                         <img onClick={()=>senddata(item)}
             className="img-data img-datas"

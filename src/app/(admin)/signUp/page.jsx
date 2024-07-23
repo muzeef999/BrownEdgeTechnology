@@ -69,7 +69,7 @@ const SignUpPage = () => {
       Object.values(formData).every((field) => field !== '');
     if (isValid) {
       try {
-        const res = await axios.post("/api/signUp", formData);
+        const res = await axios.post("https://node-bqys.onrender.com/login/signup", formData);
         if (res.data.status === "400") {
           setResponseError(res.data.message);
           toast.error("Signup failed");

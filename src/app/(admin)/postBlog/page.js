@@ -2,14 +2,21 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { IoIosAdd, IoIosCreate, IoIosTrash } from "react-icons/io";
-
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Modal from 'react-bootstrap/Modal';
 // Dynamically import ReactQuill with no SSR
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css";
 import { Sidebar } from "../../compoents/Sidebar";
+import Slider from "react-slick";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [blogs, setBlogs] = useState([]);
+  const [show, setShow] = useState(false);
+  const [shows, setShows] = useState(false);
   const [currentBlog, setCurrentBlog] = useState({
     title: "",
     img: "",
@@ -19,6 +26,15 @@ const Page = () => {
   const [file, setFile] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState("");
+  const [storedata,setstoredata]= useState([])
+
+  const token = localStorage.getItem("token")
+  const router = useRouter()
+  useEffect(()=>{
+   if(!token){
+    router.push("/signIn")
+   }
+  },[])
 
   const getFile = (event) => {
     const uploadedFile = event.target.files[0];
@@ -53,11 +69,17 @@ const Page = () => {
     fetchBlogs();
   }, []);
 
+  const handleClose = () => setShows(false);
+  const handleShows = () => setShows(true);
+
+
   const fetchBlogs = async () => {
     try {
-      const response = await fetch("/api/blogs");
+      const response = await fetch("https://node-bqys.onrender.com/user/get");
       const data = await response.json();
-      setBlogs(data.blogs);
+      setBlogs(data);
+      console.log(data,"namaste india")
+      console.log(blogs,"blogs data container")
     } catch (err) {
       console.error("Error fetching blogs:", err);
     }
@@ -67,7 +89,7 @@ const Page = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `/api/blogs${isEditing ? `/${currentBlog._id}` : ""}`,
+        `https://node-bqys.onrender.com/user/create${isEditing ? `/${currentBlog._id}` : ""}`,
         {
           method: isEditing ? "PUT" : "POST",
           headers: {
@@ -105,7 +127,7 @@ const Page = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`/api/blogs/${id}`, {
+      const response = await fetch(`https://node-bqys.onrender.com/user/delete/${id}`, {
         method: "DELETE",
       });
 
@@ -119,14 +141,24 @@ const Page = () => {
       setMessage("Error: " + err.message);
     }
   };
+const showdata = (blog) =>{
+setstoredata(blog)
+   setShow(true)
+   console.log(storedata,"storedata")
+}
 
   return (
-    <div className="pageContainer">
+    <div className="pageContainer  ">
+    <div className="menubar">
     <Sidebar />
-      <div className="container">
+    </div>
+      <div className="container data-contain">
         <form onSubmit={handleSubmit}>
-          <div className="my-3 mb-3">
-            <input
+          <div className="my-5 mb-2" >
+            <div className="d-flex justify-content-between align-items-center pe-5">
+              <div>
+              <input
+            style={{marginTop:"100px"}}
               type="file"
               className="fileUpload"
               accept="image/*"
@@ -136,7 +168,17 @@ const Page = () => {
             <br />
             <br />
             {file && <img src={file} className="imageupload" alt="uploaded" />}
+              </div>
+              <div className="my-5">
+              <Button variant="primary" className="offcanvas-nav" onClick={handleShows}>
+        Launch
+      </Button>
+              </div>
+            </div>
+           
             <br />
+
+         
             <input
               type="text"
               placeholder="Title"
@@ -186,8 +228,11 @@ const Page = () => {
           {message && <p>{message}</p>}
         </form>
         <div>
-          {blogs.map((blog) => (
-            <div
+          <div className="container">
+              <div className="row">
+              {blogs && blogs.map((blog) => (
+          <div className="col-md-4" key={blog._id}>
+  <div
               key={blog._id}
               style={{
                 border: "1px solid #ccc",
@@ -195,9 +240,19 @@ const Page = () => {
                 margin: "10px 0",
               }}
             >
-              <h3>{blog.title}</h3>
+              <img 
+      src={blog.img} 
+      style={{
+        width: '100%', 
+        height: '250px', 
+        objectFit: 'cover', 
+        borderTopLeftRadius: '12px', 
+        borderTopRightRadius: '12px'
+      }} ></img>
+              <h3>{blog.title.slice(0,50)}</h3>
               <p>{blog.author}</p>
-              <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+              <p>{blog.content.slice(0,130)}</p>
+              <div className="d-flex justify-content-evenly align-items-center">
               <button
                 className="btn btn-success"
                 onClick={() => handleEdit(blog)}
@@ -212,10 +267,63 @@ const Page = () => {
                 <IoIosTrash />
                 &nbsp;Delete
               </button>
+              <button
+                className="btn btn-success ms-3"
+                onClick={()=>showdata(blog)}
+              >
+               <MdOutlineRemoveRedEye />
+                &nbsp;View
+              </button>
+              </div>
             </div>
+          </div>
           ))}
+              </div>
+          </div>
         </div>
       </div>
+
+
+      {/* data container */}
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        fullscreen
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-custom-modal-styling-title">
+            Custom Modal Styling
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+         <div>
+         <img 
+      src={storedata && storedata.img} 
+      style={{
+        width: '100%', 
+        height: '500px', 
+        objectFit: 'cover', 
+        borderTopLeftRadius: '12px', 
+        borderTopRightRadius: '12px'
+      }} ></img>
+              <h3>{storedata && storedata.title}</h3>
+              <p>{storedata && storedata.author}</p>
+              <p>{storedata && storedata.content}</p>
+         </div>
+        </Modal.Body>
+      </Modal>
+      {/* data container end*/}
+
+      <Offcanvas show={shows} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+         <Sidebar />
+        </Offcanvas.Body>
+      </Offcanvas>
+
     </div>
   );
 };

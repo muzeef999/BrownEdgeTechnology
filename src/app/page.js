@@ -13,7 +13,7 @@ export default function Home() {
     setloader(true);
   });
   return (
-    <div>
+    <div style={{overflowX:"hidden"}}>
       {!loader ? (
         <div className="loaderbox">
           <div className="loader"></div>

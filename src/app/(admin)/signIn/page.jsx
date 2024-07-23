@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -13,6 +13,14 @@ const SignInPage = () => {
   const [errors, setErrors] = useState({ email: '', password: '' });
   const [responseError, setResponseError] = useState(''); // State for response error message
   const router = useRouter();
+
+  const token = localStorage.getItem("token")
+  const routers = useRouter()
+  useEffect(()=>{
+   if(token){
+    routers.push("/dashboard")
+   }
+  })
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,7 +61,7 @@ const SignInPage = () => {
                     Object.values(formData).every((field) => field !== '');
     if (isValid) {
       try {
-        await axios.post("/api/signIn", formData).then((res) => {
+        await axios.post("https://node-bqys.onrender.com/login/signin", formData).then((res) => {
             if(res.data.status == "400"){
                 setResponseError(res.data.message);  
                 console.log(res,"res message")
@@ -61,8 +69,10 @@ const SignInPage = () => {
             }else{
               toast("Login successful");
               formData.email = ""
+              console.log(res.data.token,"res data")
+              localStorage.setItem("token",res.data.token)
               setTimeout(() => {
-                router.push("/postBlog");
+                router.push(`${token?"/signIn":"/dashboard"}`);
                 formData.email = ""
               },3000); 
             }

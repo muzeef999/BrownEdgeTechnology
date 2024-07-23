@@ -12,9 +12,9 @@ const BlogPage = () => {
   useEffect(() => {
     const getBlogsData = async () => {
       try {
-        const response = await fetch("/api/blogs");
+        const response = await fetch("https://node-bqys.onrender.com/user/get");
         const jsonData = await response.json();
-        setBlog(jsonData.blogs);
+        setBlog(jsonData);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -68,7 +68,7 @@ const BlogPage = () => {
 
       <div className="container">
   <div className="grid-container1">
-    {blog?.map((item) => (
+    {blog && blog?.map((item) => (
       <div className="grid-item1" key={item._id}>
         <Link href={`blogs/${item._id}`} style={{textDecoration:'none'}}>
           <img
