@@ -106,9 +106,9 @@ const Offering = () => {
       </center>
       <br /><br />
 
-      <div className='grid-container-home' data-aos="fade-up" data-aos-delay="200" style={{overflowX:"hidden"}}>
+      <div className='grid-container-home' data-aos="fade-up" data-aos-delay="200" >
         {offerings.map(({ image, title, description, aos, delay }, index) => (
-          <div className='grid-items-home' key={index} data-aos={aos} data-aos-delay={delay} style={{overflowX:"hidden"}}>
+          <div className='grid-items-home' key={index} data-aos={aos} data-aos-delay={delay} >
             <br />
             <Image className='mx-auto d-block' src={image} style={{ width: '30%', height: 'auto' }} />
             <h5 className='text-center p-3'>{title}</h5>

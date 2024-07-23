@@ -13,6 +13,7 @@ import { Sidebar } from "../../compoents/Sidebar";
 import Slider from "react-slick";
 import { useRouter } from "next/navigation";
 
+
 const Page = () => {
   const [blogs, setBlogs] = useState([]);
   const [show, setShow] = useState(false);
@@ -26,15 +27,16 @@ const Page = () => {
   const [file, setFile] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState("");
-  const [storedata,setstoredata]= useState([])
+  const [storedata, setStoredata] = useState([]); // Fixed state variable name
 
-  const token = localStorage.getItem("token")
-  const router = useRouter()
-  useEffect(()=>{
-   if(!token){
-    router.push("/signIn")
-   }
-  },[])
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/signIn");
+    }
+  }, [router]);
 
   const getFile = (event) => {
     const uploadedFile = event.target.files[0];
@@ -72,14 +74,11 @@ const Page = () => {
   const handleClose = () => setShows(false);
   const handleShows = () => setShows(true);
 
-
   const fetchBlogs = async () => {
     try {
       const response = await fetch("https://node-bqys.onrender.com/user/get");
       const data = await response.json();
       setBlogs(data);
-      console.log(data,"namaste india")
-      console.log(blogs,"blogs data container")
     } catch (err) {
       console.error("Error fetching blogs:", err);
     }
@@ -141,44 +140,43 @@ const Page = () => {
       setMessage("Error: " + err.message);
     }
   };
-const showdata = (blog) =>{
-setstoredata(blog)
-   setShow(true)
-   console.log(storedata,"storedata")
-}
+
+  const showData = (blog) => {
+    setStoredata(blog);
+    setShow(true);
+  };
 
   return (
-    <div className="pageContainer  ">
-    <div className="menubar">
-    <Sidebar />
-    </div>
+    <div className="pageContainer">
+      <div className="menubar">
+        <Sidebar />
+      </div>
       <div className="container data-contain">
         <form onSubmit={handleSubmit}>
-          <div className="my-5 mb-2" >
+          <div className="my-5 mb-2">
             <div className="d-flex justify-content-between align-items-center pe-5">
               <div>
-              <input
-            style={{marginTop:"100px"}}
-              type="file"
-              className="fileUpload"
-              accept="image/*"
-              onChange={getFile}
-              required
-            />
-            <br />
-            <br />
-            {file && <img src={file} className="imageupload" alt="uploaded" />}
+                <input
+                  style={{ marginTop: "100px" }}
+                  type="file"
+                  className="fileUpload"
+                  accept="image/*"
+                  onChange={getFile}
+                  required
+                />
+                <br />
+                <br />
+                {file && <img src={file} className="imageupload" alt="uploaded" />}
               </div>
               <div className="my-5">
-              <Button variant="primary" className="offcanvas-nav" onClick={handleShows}>
-        Launch
-      </Button>
+                <Button variant="primary" className="offcanvas-nav" onClick={handleShows}>
+                  Launch
+                </Button>
               </div>
             </div>
-           
+
             <br />
 
-         
             <input
               type="text"
               placeholder="Title"
@@ -229,62 +227,63 @@ setstoredata(blog)
         </form>
         <div>
           <div className="container">
-              <div className="row">
+            <div className="row">
               {blogs && blogs.map((blog) => (
-          <div className="col-md-4" key={blog._id}>
-  <div
-              key={blog._id}
-              style={{
-                border: "1px solid #ccc",
-                padding: "10px",
-                margin: "10px 0",
-              }}
-            >
-              <img 
-      src={blog.img} 
-      style={{
-        width: '100%', 
-        height: '250px', 
-        objectFit: 'cover', 
-        borderTopLeftRadius: '12px', 
-        borderTopRightRadius: '12px'
-      }} ></img>
-              <h3>{blog.title.slice(0,50)}</h3>
-              <p>{blog.author}</p>
-              <p>{blog.content.slice(0,130)}</p>
-              <div className="d-flex justify-content-evenly align-items-center">
-              <button
-                className="btn btn-success"
-                onClick={() => handleEdit(blog)}
-              >
-                <IoIosCreate />
-                &nbsp;Edit
-              </button>
-              <button
-                className="btn btn-danger ms-3"
-                onClick={() => handleDelete(blog._id)}
-              >
-                <IoIosTrash />
-                &nbsp;Delete
-              </button>
-              <button
-                className="btn btn-success ms-3"
-                onClick={()=>showdata(blog)}
-              >
-               <MdOutlineRemoveRedEye />
-                &nbsp;View
-              </button>
-              </div>
+                <div className="col-md-4" key={blog._id}>
+                  <div
+                    key={blog._id}
+                    style={{
+                      border: "1px solid #ccc",
+                      padding: "10px",
+                      margin: "10px 0",
+                    }}
+                  >
+                    <img
+                      src={blog.img}
+                      style={{
+                        width: '100%',
+                        height: '250px',
+                        objectFit: 'cover',
+                        borderTopLeftRadius: '12px',
+                        borderTopRightRadius: '12px'
+                      }}
+                      alt={blog.title}
+                    />
+                    <h3>{blog.title.slice(0, 50)}</h3>
+                    <p>{blog.author}</p>
+                    <p>{blog.content.slice(0, 130)}</p>
+                    <div className="d-flex justify-content-evenly align-items-center">
+                      <button
+                        className="btn btn-success"
+                        onClick={() => handleEdit(blog)}
+                      >
+                        <IoIosCreate />
+                        &nbsp;Edit
+                      </button>
+                      <button
+                        className="btn btn-danger ms-3"
+                        onClick={() => handleDelete(blog._id)}
+                      >
+                        <IoIosTrash />
+                        &nbsp;Delete
+                      </button>
+                      <button
+                        className="btn btn-success ms-3"
+                        onClick={() => showData(blog)}
+                      >
+                        <MdOutlineRemoveRedEye />
+                        &nbsp;View
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-          ))}
-              </div>
           </div>
         </div>
       </div>
 
-
-      {/* data container */}
+      {/* Data Container */}
       <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -297,33 +296,34 @@ setstoredata(blog)
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         <div>
-         <img 
-      src={storedata && storedata.img} 
-      style={{
-        width: '100%', 
-        height: '500px', 
-        objectFit: 'cover', 
-        borderTopLeftRadius: '12px', 
-        borderTopRightRadius: '12px'
-      }} ></img>
-              <h3>{storedata && storedata.title}</h3>
-              <p>{storedata && storedata.author}</p>
-              <p>{storedata && storedata.content}</p>
-         </div>
+          <div>
+            <img
+              src={storedata && storedata.img}
+              style={{
+                width: '100%',
+                height: '500px',
+                objectFit: 'cover',
+                borderTopLeftRadius: '12px',
+                borderTopRightRadius: '12px'
+              }}
+              alt={storedata.title}
+            />
+            <h3>{storedata && storedata.title}</h3>
+            <p>{storedata && storedata.author}</p>
+            <p>{storedata && storedata.content}</p>
+          </div>
         </Modal.Body>
       </Modal>
-      {/* data container end*/}
+      {/* Data Container End */}
 
       <Offcanvas show={shows} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-         <Sidebar />
+          <Sidebar />
         </Offcanvas.Body>
       </Offcanvas>
-
     </div>
   );
 };

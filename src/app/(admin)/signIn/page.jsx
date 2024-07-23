@@ -1,33 +1,29 @@
 "use client";
+
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { ToastContainer } from 'react-toastify';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const SignInPage = () => {
+const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({ email: '', password: '' });
-  const [responseError, setResponseError] = useState(''); // State for response error message
+  const [responseError, setResponseError] = useState('');
   const router = useRouter();
 
-  const token = localStorage.getItem("token")
-  const routers = useRouter()
-  useEffect(()=>{
-   if(token){
-    routers.push("/dashboard")
-   }
-  })
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      router.push('/dashboard');
+    }
+  }, [router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
     validateField(name, value);
   };
 
@@ -49,34 +45,25 @@ const SignInPage = () => {
       default:
         break;
     }
-    setErrors({
-      ...errors,
-      [name]: error,
-    });
+    setErrors({ ...errors, [name]: error });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isValid = Object.values(errors).every((error) => error === '') &&
-                    Object.values(formData).every((field) => field !== '');
+    const isValid = Object.values(errors).every((error) => error === '') && Object.values(formData).every((field) => field !== '');
     if (isValid) {
       try {
-        await axios.post("https://node-bqys.onrender.com/login/signin", formData).then((res) => {
-            if(res.data.status == "400"){
-                setResponseError(res.data.message);  
-                console.log(res,"res message")
-                toast("Login failed");
-            }else{
-              toast("Login successful");
-              formData.email = ""
-              console.log(res.data.token,"res data")
-              localStorage.setItem("token",res.data.token)
-              setTimeout(() => {
-                router.push(`${token?"/signIn":"/dashboard"}`);
-                formData.email = ""
-              },3000); 
-            }
-        });
+        const response = await axios.post('https://node-bqys.onrender.com/login/signin', formData);
+        if (response.data.status === '400') {
+          setResponseError(response.data.message);
+          toast.error('Login failed');
+        } else {
+          toast.success('Login successful');
+          localStorage.setItem('token', response.data.token);
+          setTimeout(() => {
+            router.push('/dashboard');
+          }, 3000);
+        }
       } catch (error) {
         setResponseError(error.response?.data?.message || 'An error occurred while submitting the form');
       }
@@ -89,7 +76,7 @@ const SignInPage = () => {
     <div>
       <Container className=''>
         <Row className='d-flex justify-content-center align-items-center my-5'> 
-          <Col md={6} className=' box-containe d-flex justify-content-center align-items-center'>
+          <Col md={6} className='box-container d-flex justify-content-center align-items-center'>
             <div>
               <h1 style={{ fontWeight: 800 }}>Welcome Back !</h1>
               <br />
@@ -122,7 +109,7 @@ const SignInPage = () => {
                 <ToastContainer />
               </Form>
               <br />
-              <p className='text-sign'>Don't have an account? <u onClick={()=>router.push("/signUp")}><b>Sign up</b></u></p>
+              <p className='text-sign'>Don't have an account? <u onClick={() => router.push('/signUp')}><b>Sign up</b></u></p>
             </div>
           </Col>
           {/* <Col md={6}>
@@ -132,6 +119,6 @@ const SignInPage = () => {
       </Container>
     </div>
   );
-}
+};
 
-export default SignInPage;
+export default LoginPage;

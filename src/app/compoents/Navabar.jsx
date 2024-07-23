@@ -142,9 +142,7 @@ const Navbar9 = () => {
               <NavItem>
                 <NavLink className={pathname === "/contact" ? "design" : ""} href="/contact">Contact Us</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink className={pathname === "/contact" ? "design" : ""} href="/signIn"><button>Admin</button></NavLink>
-              </NavItem>
+             
             </Nav>
           </Navbar.Collapse>
         </Navbar>

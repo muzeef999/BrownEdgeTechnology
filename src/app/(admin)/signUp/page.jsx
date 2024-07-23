@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const SignUpPage = () => {
+const Page = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -161,4 +161,4 @@ const SignUpPage = () => {
   );
 }
 
-export default SignUpPage;
+export default Page;
