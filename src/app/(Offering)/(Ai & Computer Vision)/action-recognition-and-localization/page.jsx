@@ -13,25 +13,31 @@ const Page = () => {
      !loader? <div className="loaderbox">
      <div className="loader"></div>
    </div> : <div>
-   <div className="video">
-      <video src='/ais.mp4' muted autoPlay loop className='videoplayer about-video'></video>
-      
-         <div className='container sec'>
-          <br/>
-          <br/>
-          <div className='row  '>
-
-           
-          
-             <h1 style={{color:'#FFF', fontWeight:'500'}} className="about-data">Action-Recognition-And-Localization</h1>
-             {/* <p style={{color:'#FFF', fontWeight:'700', fontSize:'35px'}}>Revolutionizing Smart Mobility with Cutting-Edge Engineering Solutions</p> */}
-       
-       
-    
-          </div>
-          </div>
    
-    </div>
+   <div className="position-relative video-container">
+        <div className="embed-responsive embed-responsive-16by9">
+          <video
+            className="embed-responsive-item"
+            src="/ais.mp4"
+            muted
+            autoPlay
+            loop
+          ></video>
+        </div>
+        <div
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        ></div>
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+           Action Recognition and Localization in a Weakly Supervised Manner
+
+          </h1>
+        </div>
+      </div>
 
       <div className="container my-5">
         <h2 className='text-center mb-3'>Action Recognition and Localization in a Weakly Supervised Manner</h2>

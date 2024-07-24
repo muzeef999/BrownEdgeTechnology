@@ -86,17 +86,17 @@ const Navbar9 = () => {
 
 
                   <DropdownSubMenu title="Automotive Cyber Security Engineering">
-                    <Dropdown.Item href="#">Sub cyber security concept phase</Dropdown.Item>
-                    <Dropdown.Item href="#">Product development phase</Dropdown.Item>
-                    <Dropdown.Item href="#">Thread analysis and risk assessment methods</Dropdown.Item>
+                    <Dropdown.Item href="/subcybersecurity">Sub cyber security concept phase</Dropdown.Item>
+                    <Dropdown.Item href="/productdevelopmentphase">Product development phase</Dropdown.Item>
+                    <Dropdown.Item href="/threadanalysis">Thread analysis and risk assessment methods</Dropdown.Item>
                   </DropdownSubMenu>
 
                   
 
                   <DropdownSubMenu title="Training">
-                    <Dropdown.Item href="#">Cyber security</Dropdown.Item>
-                    <Dropdown.Item href="#">Validation</Dropdown.Item>
-                    <Dropdown.Item href="#">System requirements</Dropdown.Item>
+                    <Dropdown.Item href="/cybersecurity">Cyber security</Dropdown.Item>
+                    <Dropdown.Item href="/validation">Validation</Dropdown.Item>
+                    <Dropdown.Item href="/systemrequirment">System requirements</Dropdown.Item>
                   </DropdownSubMenu>
 
 
@@ -108,7 +108,7 @@ const Navbar9 = () => {
                 
 
                   <DropdownSubMenu title="Tools & Automation">
-                    <Dropdown.Item href="#">Data Analytics Tools</Dropdown.Item>
+                    <Dropdown.Item href="/data_analytics_tools">Data Analytics Tools</Dropdown.Item>
                     <Dropdown.Item href="/test-author">Test Authoring Tool</Dropdown.Item>
                   </DropdownSubMenu>
 

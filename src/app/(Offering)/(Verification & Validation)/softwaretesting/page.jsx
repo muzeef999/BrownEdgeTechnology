@@ -14,47 +14,76 @@ const Page = () => {
     <div className="loader"></div>
   </div> :
   <div>
-        <div className="video">
-      <video src='/validation.mp4' muted autoPlay loop className='videoplayer about-video'></video>
-      
-         <div className='container sec'>
-          <br/>
-          <br/>
-          <div className='row  '>
 
-           
-          
-             <h1 style={{color:'#FFF', fontWeight:'500'}} className="about-data">Software Testing</h1>
-             {/* <p style={{color:'#FFF', fontWeight:'700', fontSize:'35px'}}>Revolutionizing Smart Mobility with Cutting-Edge Engineering Solutions</p> */}
-       
-       
-    
-          </div>
-          </div>
-   
-    </div>
+<div className="position-relative video-container">
+        <div className="embed-responsive embed-responsive-16by9">
+          <video
+            className="embed-responsive-item"
+            src="/validation.mp4"
+            muted
+            autoPlay
+            loop
+          ></video>
+        </div>
+        <div
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        ></div>
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+            Software Testing
+
+          </h1>
+        </div>
+      </div>
+
+        
 
       <div className="container my-3">
-        <h2 className='text-center mb-3'>System validation – ADAS</h2>
+        <h2 className='text-center mb-3'>Software Testing</h2>
         <div className="row">
             <div className="col-md-6">
             <h2 style={{color:" #964B00"}}>Problem Overview</h2>
-            <p className='p'>In today’s automotive world ADAS feature plays a prominent role in facilitating driving activities for a safe and comfortable ride. One too many ADAS functions are equipped in vehicles depending upon model and cost of production without compromising quality.</p>
+            <p className='p'>At BrownEdgeTechnology, we ensure the highest quality and reliability in automotive software through rigorous testing processes. Our focus is on Advanced Driver Assistance Systems (ADAS) and other embedded systems, ensuring they meet stringent industry standards.</p>
 
-            <p className='p'>Most of the OEMs exploit the potential of their own embedded systems and aim to deliver upgraded and bug-free software for Robust functionality.</p>
+            
 
+           
+             <h4>Testing Process</h4>
+             <ol type='1'>
+              <li> <h6 style={{color:" #964B00"}}>Customer Requirements</h6></li>
+              <ul type="disc">
+                <li><p>Gather and document customer expectations.</p></li>
+              </ul>
+              <li> <h6 style={{color:" #964B00"}}>System Requirement Document</h6></li>
+              <ul type="disc">
+                <li><p>Detail software specifications and functionalities.</p></li>
+              </ul> 
+              <li> <h6 style={{color:" #964B00"}}>Requirement Review</h6></li>
+              <ul type="disc">
+                <li><p>Analyze and review for clarity and testability.</p></li>
+              </ul>
 
-            <p className='p'>Verification and validation mitigate the fatal errors in the vehicle on road.</p>
+              <li> <h6 style={{color:" #964B00"}}>Test Case Planning</h6></li>
+              <ul type="disc">
+                <li><p>Develop a comprehensive test plan.</p></li>
+              </ul>
+              <li> <h6 style={{color:" #964B00"}}>Test Case Design</h6></li>
+              <ul type="disc">
+                <li><p>Create detailed test cases for all scenarios.</p></li>
+              </ul>
 
-            <p className="p">
-            Verification is the process of checking that a software achieves its goal without any bugs.
-            </p>
-            <p className="p">Validation is the process of checking whether the software product is up to the mark or in other words product has high-level requirements.</p>
+              <li> <h6 style={{color:" #964B00"}}>Test Automation</h6></li>
+              <ul type="disc">
+                <li><p>Automate repetitive and regression tests.</p></li>
+              </ul>
+
+             </ol>
+            
              
-             <h5 style={{color:" #964B00"}}>System validation Process flow</h5>
-             <p className="p ">
-             Customer Requirements <span ><MdArrowRightAlt className='my-2'/></span>  System Requirement Document <span><MdArrowRightAlt /></span>  Requirement Review <span><MdArrowRightAlt /></span> Test case planning <span><MdArrowRightAlt /></span>  Testcase Design <span><MdArrowRightAlt /></span>  Test implementation & Execution <span><MdArrowRightAlt /></span> Test Automation <span><MdArrowRightAlt /></span>  Consolidate testing experience <span><MdArrowRightAlt /></span>  Test artifacts delivery
-             </p>
 
            
 
@@ -66,28 +95,16 @@ const Page = () => {
 
     
 
-        <h2 style={{color:" #964B00"}}>Challenges</h2>
+        <h2 style={{color:" #964B00"}}>Key Testing Approaches</h2>
 
-        <ul className='list-item'>
-           <li>Automation of all use cases is limited.</li>
-           <li>TestSetup should be handled with awareness.</li>
-           <li>Delivery of effective test product in target timeline.</li>
+        <ul type='disc'>
+           <li type="disc" className='d-flex'><b>Flashing:</b><p> Validate the correct programming sequence and secure software updates for ECUs.</p></li>
+           <li type="disc" className='d-flex'><b>Diagnostics:</b><p>Ensure communication and functionality between tester tools and ECUs.</p></li>
+           <li type="disc" className='d-flex'><b>Vehicle Communication:</b><p> Test reliability, security, and data transfer speed using automotive Ethernet and CAN protocols.</p></li>
+           <li type="disc" className='d-flex'><b>Performance Testing:</b><p> Assess software performance under various conditions.</p></li>
+           <li type="disc" className='d-flex'><b>Safety Testing:</b><p> Ensure the software operates safely under all conditions.</p></li>
+           <li type="disc" className='d-flex'><b>Security Testing:</b><p> Identify and address software vulnerabilities.</p></li>
         </ul>
-
-
-        <h2 style={{color:" #964B00"}}>Approach</h2>
-        <h5 style={{color:" #964B00"}}>Flashing</h5>
-<p className="p">
-The flashing test involves validating the correct programming sequence,and upgrading /downgrading the protection process of the latest software released for the ECU through customer-provided tool conforming to the security standards.
-</p>
-
-
-  <h5 style={{color:" #964B00"}}>Vehicle diagnostics</h5>
-  <p className="p">The testing goal is to verify that the communication between the tester tool and ECU is possible that diagnostic functions can be accessed and that the diagnostic functions are performing as required by the OEM.</p>
-  <h5 style={{color:" #964B00"}}>Vehicle Communication</h5>
-  <p className="p">
-  The vehicle communication testing ensures reliability, security,and seamless data transfer between the tester and ECU. To validate the speed of Data Transmission. The automotive ethernet and CAN protocols are tested at each layer starting from the physical layer to the Application layer with the conformance to the various protocols used in the ECU.
-  </p>
 
 
       </div>
@@ -98,4 +115,4 @@ The flashing test involves validating the correct programming sequence,and upgra
   )
 }
 
-export default Page
+export default Page
