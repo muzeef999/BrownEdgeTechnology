@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Slider from "react-slick";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,10 +12,11 @@ const Blogs = () => {
   const [error, setError] = useState(null);
   let sliderRef = React.createRef();
 
+const router = useRouter()
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get(`https://node-bqys.onrender.com/user/get`);
+        const response = await axios.get('https://node-bqys.onrender.com/user/get');
         setBlogs(response.data);
         setLoading(false);
         console.log(response,"fsdfasdf")
@@ -26,6 +28,13 @@ const Blogs = () => {
 
     fetchBlogs();
   }, []);
+
+  const senditem =(blog) =>{
+
+router.push(`blogs/${blog._id}`)
+
+  }
+  
 
   if (loading) {
     return <p>Loading...</p>;
@@ -103,6 +112,7 @@ const Blogs = () => {
             style={{
               borderRadius: '12px',
               padding: '12px',
+              cursor:'pointer',
               boxShadow: '5px 5px 10px #c3c3c3, -5px -5px 10px #fdfdfd',
               margin: '10px 10px' // Adjusted margin to create a gap between the divs
             }}>
@@ -115,8 +125,10 @@ const Blogs = () => {
                 objectFit: 'cover', 
                 borderTopLeftRadius: '12px', 
                 borderTopRightRadius: '12px'
+                
               }} 
               alt="Blog Logo" 
+              onClick={()=>senditem(blog)}
             />
             <div>
               <h5>{blog.title}</h5>

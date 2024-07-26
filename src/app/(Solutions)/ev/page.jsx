@@ -57,9 +57,7 @@ const Page = () => {
 
           
             </div>
-            <div className="col-md-6">
-
-            </div>
+           
         </div>
       </div>
 
@@ -132,16 +130,7 @@ PCB Dimension
 </div>
 </div>
     
-    <div className="col-md-6">
-
-    </div>
-        </div>
-      </div>
-
-<div className="container">
-    <div className="row">
-        <div className="col-md-6"></div>
-        <div class="col-md-6">
+    <div class="col-md-6">
 <h5 class="text-center">Battery Management System (BMS)</h5>
 <div class="">
 <table class="table table-bordered">
@@ -216,10 +205,10 @@ Enclosure Dimension
 </div>
 </div>
     </div>
-</div>
-  
-   </div>
-  }
+        </div>
+      </div>
+
+    }
 
 </div>
   )

@@ -12,16 +12,27 @@ const Page = () => {
       !loader? <div className="loaderbox">
       <div className="loader"></div>
     </div> :   <div>
-      <div className="about">
-        <div className="container">
-          <h1>About US</h1>
-          <p className="d-flex justify-content-start align-items-center">
-            <FaHome className="me-1" /> Home{" "}
-            <span className="ms-1">
-              <FaArrowRight />
-              <b className="ms-1">About us</b>
-            </span>
-          </p>
+    <div className="position-relative video-container">
+        <div className="embed-responsive embed-responsive-16by9">
+          <video
+            className="embed-responsive-item"
+            src="/bootloader.mp4"
+            muted
+            autoPlay 
+            loop
+          ></video>
+        </div> 
+        <div
+          className="position-absolute w-100 h-100"
+          style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        ></div>
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+            BOOTLOADER
+          </h1>
         </div>
       </div>
 
@@ -38,7 +49,7 @@ const Page = () => {
             <p className="p">
             It is compliant with ISO14229 standard and easily integrated with our CAN Stack.
             </p>
-            <h6 style={{color:" #964B00"}}>Below are the main features of UDS Stack,</h6>
+            <h2 style={{color:" #964B00"}}>Below are the main features of UDS Stack,</h2>
             <ul className='list-item'>
 <li>Low Memory Footprint</li>
 <li>Support of ECU Reprogramming</li>

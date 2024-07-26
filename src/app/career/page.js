@@ -39,7 +39,7 @@ const Page = () => {
             autoPlay 
             loop
           ></video>
-        </div>
+        </div> 
         <div
           className="position-absolute w-100 h-100"
           style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}

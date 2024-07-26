@@ -19,7 +19,7 @@ const Page = () => {
         <div className="embed-responsive embed-responsive-16by9">
           <video
             className="embed-responsive-item"
-            src="/validation.mp4"
+            src="/TestcaseAuthoringTool.mp4"
             muted
             autoPlay
             loop

@@ -20,7 +20,7 @@ const Page = () => {
         <div className="embed-responsive embed-responsive-16by9">
           <video
             className="embed-responsive-item"
-            src="/aboutvideo.mp4"
+            src="/aboutvid.mp4"
             muted
             autoPlay 
             loop
