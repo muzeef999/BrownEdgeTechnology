@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import automative from '../asserts/home/automotive.jpg';
-import verification from "../asserts/home/verification.jpg";
-import security from "../asserts/home/security.png";
-import integration from "../asserts/home/integration.jpg";
-import development from "../asserts/home/development.jpg";
+import automative from '../asserts/home/automotive.webp';
+import verification from "../asserts/home/verification.webp";
+import security from "../asserts/home/security.webp";
+import integration from "../asserts/home/integration.webp";
+import development from "../asserts/home/development.webp";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -19,7 +19,7 @@ const Services = () => {
         <div className='container'>
           <div className='row'>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-1 order-2 d-flex justify-content-center align-items-center' 
               data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <div>
@@ -28,7 +28,7 @@ const Services = () => {
               </div>
             </div>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-2 order-1 d-flex justify-content-center align-items-center' 
               data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <Image src={automative} style={{ width: '100%', height: 'auto' }} />
@@ -41,13 +41,13 @@ const Services = () => {
         <div className='container'>
           <div className='row'>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-1 order-2 d-flex justify-content-center align-items-center' 
               data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <Image src={integration} style={{ width: '100%', height: 'auto' }} />
             </div>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-2 order-1 d-flex justify-content-center align-items-center' 
               data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <div>
@@ -63,7 +63,7 @@ const Services = () => {
         <div className='container'>
           <div className='row'>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-1 order-2 d-flex justify-content-center align-items-center' 
               data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <div>
@@ -72,7 +72,7 @@ const Services = () => {
               </div>
             </div>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-2 order-1 d-flex justify-content-center align-items-center' 
               data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <Image src={security} style={{ width: '70%', height: 'auto' }} />
@@ -85,13 +85,13 @@ const Services = () => {
         <div className='container'>
           <div className='row'>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-1 order-2 d-flex justify-content-center align-items-center' 
               data-aos="fade-right" style={{overflow:"hidden"}}
             >
               <Image src={development} style={{ width: '70%', height: 'auto' }} />
             </div>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-2 order-1 d-flex justify-content-center align-items-center' 
               data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <div>
@@ -107,7 +107,7 @@ const Services = () => {
         <div className='container'>
           <div className='row'>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-1 order-2 d-flex justify-content-center align-items-center' 
               data-aos="fade-right" style={{overflowX:"hidden"}}
             >
               <div>
@@ -116,7 +116,7 @@ const Services = () => {
               </div>
             </div>
             <div 
-              className='col-md-6 d-flex justify-content-center align-items-center' 
+              className='col-md-6 order-md-2 order-1 d-flex justify-content-center align-items-center' 
               data-aos="fade-left" style={{overflowX:"hidden"}}
             >
               <Image src={verification} style={{ width: '100%', height: 'auto' }} />

@@ -22,6 +22,7 @@ const offerings = [
     ],
     aos: "fade-right",
     delay: 0,
+    link:"/autosar"
   },
   {
     image: datascience,
@@ -34,6 +35,7 @@ const offerings = [
     ],
     aos: "fade-right",
     delay: 200,
+    link:"/dataanalytic"
   },
   {
     image: ai,
@@ -46,6 +48,7 @@ const offerings = [
     ],
     aos: "fade-right",
     delay: 400,
+     link:"/action-recognition-and-localization"
   },
   {
     image: tools,
@@ -58,6 +61,7 @@ const offerings = [
     ],
     aos: "fade-left",
     delay: 600,
+     link:"/test-author"
   },
   {
     image: verification,
@@ -71,6 +75,7 @@ const offerings = [
     ],
     aos: "fade-left",
     delay: 800,
+    link:"/system-validation"
   },
   {
     image: title,
@@ -83,6 +88,7 @@ const offerings = [
     ],
     aos: "fade-left",
     delay: 1000,
+    link:"/validation"
   },
 ];
 
@@ -107,18 +113,20 @@ const Offering = () => {
       <br /><br />
 
       <div className='grid-container-home' data-aos="fade-up" data-aos-delay="200" >
-        {offerings.map(({ image, title, description, aos, delay }, index) => (
+        {offerings.map(({ image, title, description, aos, link,delay }, index) => (
           <div className='grid-items-home' key={index} data-aos={aos} data-aos-delay={delay} >
             <br />
             <Image className='mx-auto d-block' src={image} style={{ width: '30%', height: 'auto' }} />
-            <h5 className='text-center p-3'>{title}</h5>
-            <ul>
+            <h5 className='text-center p-3 off-head'>{title}</h5>
+            <ul className='listitem'>
               {description.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i} >{item}</li>
               ))}
             </ul>
             <div className="d-flex justify-content-center">
-              <button className="navbtn" type="submit">&nbsp;Know More&nbsp;</button>
+             <a href={link} target='blank'>
+              <button className="navbtn" type="submit">&nbsp;Know More&nbsp;</button>  
+              </a>
             </div>
           </div>
         ))}
@@ -127,4 +135,4 @@ const Offering = () => {
   );
 };
 
-export default Offering;
+export default Offering;

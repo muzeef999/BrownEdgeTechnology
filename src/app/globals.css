@@ -590,3 +590,10 @@ img.blog-img{
   justify-content: center;
   align-items: center;
 }
+
+.listitem{
+  height: 200px;
+}
+.off-head{
+  height: 60px;
+}
