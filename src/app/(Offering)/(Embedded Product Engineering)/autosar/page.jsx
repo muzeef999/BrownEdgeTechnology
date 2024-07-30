@@ -42,25 +42,26 @@ const Page = () => {
     <h2 className='text-center mb-5 my-5'>AUTOSAR – Software development of ABS ECU</h2>
 
     <div className="container">
-      <div className="row">
-       
-
-        <div className="col-md-6 autocare">
+      
+        <div className="autocare">
         <h2 style={{color:" #964B00"}}>Problem Overview</h2>
         <p>Anti-lock Braking System (ABS) is a safety-critical system in Automotive that prevents the wheels from locking up during braking. ABS interacts with different sensors and actuators at a much faster rate for ensuring safe braking.</p>
         <p> BrownEdge Technology, in collaboration with IIT Madras and our Indian Tier-1 client company, is indigenously designing and developing the Anti-lock Braking System (ABS) from scratch.</p>
         <p>The entire SW is built on AUTOSAR stack and with our collaborated expertise in Model development, Embedded design, Automotive Real-time simulation, MIL&SIL Validation, HIL and Vehicle Testing.</p>
         </div>
-        <div className="col-md-6">
-          
-        </div>
-      </div>
+        
     </div>
 
 
 
     <div className="container">
-  <h2 style={{color:" #964B00"}}>Challenges  </h2>
+
+<div className="row">
+       
+
+
+    <div className="col-md-6">
+<h2 style={{color:" #964B00"}}>Challenges  </h2>
   <p style={{fontSize:"20px",color:" #75799b"}}>Major challenges include</p>
   <ul className='list-item'>
     <li>System Response time</li>
@@ -82,7 +83,17 @@ const Page = () => {
 
   <h2 style={{color:" #964B00"}}>Challenges  </h2>
   <p>Customer were able to perform various real-time test scenarios on Vehicles and present a complete demonstratable output to OEMs.</p>
-    </div>
+    
+
+        </div>
+
+    <div className="col-md-6">
+
+          <img src="/abs.jpg" style={{width:'100%', borderRadius:'20px'}} />
+          
+        </div>
+  </div>
+  </div>
     </div>
     }
       

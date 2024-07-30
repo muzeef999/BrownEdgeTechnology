@@ -380,7 +380,8 @@ bottom: -40px !important;
 }
 .about-data{
   position: absolute;
-  left: 100px !important;
+ text-align: center;
+ justify-content: center;
   bottom: 200px !important;
 }
 

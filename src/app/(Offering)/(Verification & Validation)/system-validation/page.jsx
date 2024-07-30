@@ -40,11 +40,10 @@ const Page = () => {
       </div>
 
 
+
       <div className="container my-3">
         <h2 className='text-center mb-3'>System validation – ADAS</h2>
-        <div className="row">
-            <div className="col-md-6">
-            <h2 style={{color:" #964B00"}}>Problem Overview</h2>
+        <h2 style={{color:" #964B00"}}>Problem Overview</h2>
             <p className='p'>In today’s automotive world ADAS feature plays a prominent role in facilitating driving activities for a safe and comfortable ride. One too many ADAS functions are equipped in vehicles depending upon model and cost of production without compromising quality.</p>
 
             <p className='p'>Most of the OEMs exploit the potential of their own embedded systems and aim to deliver upgraded and bug-free software for Robust functionality.</p>
@@ -64,13 +63,7 @@ const Page = () => {
 
            
 
-            </div>
-            <div className="col-md-6">
-
-            </div>
-        </div>
-
-    
+        
 
         <h2 style={{color:" #964B00"}}>Challenges</h2>
 

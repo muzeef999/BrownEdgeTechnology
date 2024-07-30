@@ -44,14 +44,15 @@ const Page = () => {
           className="position-absolute w-100 h-100"
           style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
         ></div>
-        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
-          <h1
-            style={{ color: "#FFF", fontWeight: "500" }}
-            className="about-data"
-          >
-            carrer
-          </h1>
-        </div>
+      <div className="container d-flex">
+  <h1
+    style={{ color: "#FFF", fontWeight: "500" }}
+    className="about-data"
+  >
+    career
+  </h1>
+</div>
+
       </div>
       <br />
 

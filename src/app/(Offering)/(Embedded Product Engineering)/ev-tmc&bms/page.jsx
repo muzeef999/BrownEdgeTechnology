@@ -128,18 +128,10 @@ PCB Dimension
 </table>
 </div>
 </div>
-    <div className="col-md-6"></div>
-  </div>
-</div>
+    <div className="col-md-6">
 
 
-
-<div className="container">
-  
-  <div className="row">
-  <div className="col-md-6"></div>
-  <div class="col-md-6">
-<h5 class="text-center">Battery Management System (BMS)</h5>
+    <h5 class="text-center">Battery Management System (BMS)</h5>
 <div class="">
 <table class="table table-bordered">
 <thead class="table-primary">
@@ -211,11 +203,13 @@ Enclosure Dimension
 </tbody>
 </table>
 </div>
-</div>
-  </div>
 
- 
+
+
+    </div>
+  </div>
 </div>
+
 
 
 

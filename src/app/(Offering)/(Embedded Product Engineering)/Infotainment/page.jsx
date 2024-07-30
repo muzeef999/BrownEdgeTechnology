@@ -10,6 +10,7 @@ const Page = () => {
   })
   return (
 
+
   <div>
     {
        !loader? <div className="loaderbox">
@@ -61,6 +62,10 @@ const Page = () => {
   </ul>
         </div>
         <div className="col-md-6">
+
+        <img src="/info.jpg" style={{width:'100%', borderRadius:'20px'}} />
+          
+        
           
         </div>
       </div>
