@@ -37,6 +37,8 @@ const Page = () => {
         </div>
       </div>
 
+
+
   <div className="container my-3">
     <br/>
     <h2 className='text-center mb-3'>CAN SOFTWARE STACK</h2>
@@ -52,22 +54,18 @@ const Page = () => {
         <p className="p">
         Fully Customizable according to customer specific requirements with long-term support in Stack integration.
         </p>
+        <br/>
+        <br/>
         <h2 style={{color:" #964B00"}}>The stack is built around below key objectives to satisfy different use cases</h2>
-        <ul style={{padding:'30px'}} className='list-item'>
+        <ul style={{paddingLeft:'30px'}} className='list-item'>
 <li>Low Memory Footprint</li>
 <li>Reliability</li>
 <li>Easy Portability</li>
 <li>Scalability</li>
 <li>Maintainability</li>
         </ul>
-      </div>
+
         
-    </div>
-  </div>
-
-  
-
-  <div className="container">
   <p className="p">
   Complete software is designed as different layers to isolate HW-specific logic from application-specific logic, such an abstraction helps greatly in porting the stack to other platforms with very less development effort.
   </p>
@@ -78,8 +76,10 @@ const Page = () => {
  Fully Customizable according to customer specific requirements with long-term support in Stack integration.
  </p>
 
+ <br/>
+ <br/>
  <h2 style={{color:" #964B00"}}>Below are the notable features of our solution</h2>
- <ul className='list-item'>
+ <ul style={{paddingLeft:'30px'}} className='list-item'>
 <li>Support for CAN Message with payload greater than 8 bytes</li>
 <li>Bus Off Handling and Auto recovery</li>
 <li>Flow control</li>
@@ -88,10 +88,16 @@ const Page = () => {
 <li>Receive Message Timeout Monitoring</li>
 <li>Compatible with RTOS and Bare Metal Programming environment</li>
 <li>Compliant with MISRA Standards</li>
+
+
  </ul>
 
   </div>
-</div>
+      </div>
+        
+    </div>
+  </div>
+  
   }
 
 

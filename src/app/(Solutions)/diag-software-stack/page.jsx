@@ -31,15 +31,15 @@ const Page = () => {
             style={{ color: "#FFF", fontWeight: "500" }}
             className="about-data"
           >
-            BOOTLOADER
+            DIAG SOFTWARE STACK
           </h1>
         </div>
       </div>
 
       <div className="container my-3">
         <h2 className='text-center mb-3'>DIAG SOFTWARE STACK</h2>
-        <div className="row">
-          <div className="col-md-6">
+
+        
             <p className="p">
             Our UDS Protocol stack is designed to run on tiny microcontrollers with a low memory footprint supporting mandatory limited set of UDS services.
             </p>
@@ -49,6 +49,10 @@ const Page = () => {
             <p className="p">
             It is compliant with ISO14229 standard and easily integrated with our CAN Stack.
             </p>
+        <div className="row">
+
+        <div className="col-md-6">
+
             <h2 style={{color:" #964B00"}}>Below are the main features of UDS Stack,</h2>
             <ul className='list-item'>
 <li>Low Memory Footprint</li>
@@ -61,7 +65,9 @@ const Page = () => {
 <li>Contains UDS Client and UDS Server</li>
             </ul>
           </div>
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex justify-content-center align-items-center">
+
+              <img src="/ecu.jpg" style={{width:'100%', borderRadius:'20px'}} />
 
             </div>
         </div>

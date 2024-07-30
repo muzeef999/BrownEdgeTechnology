@@ -39,22 +39,19 @@ const Page = () => {
       <div className="container my-3">
         <h2 className='text-center mb-3'>DMS - Algorithm / Computer Vision</h2>
         <div className="row">
-            <div className="col-md-6">
-            <h2 style={{color:" #964B00"}}>Overview</h2>
+                        <h2 style={{color:" #964B00"}}>Overview</h2>
             <p className='p'>From the past decade, we witnessed exponential adaption of Electronics and software dominance in the domestic and commercial vehicles and it is expected to increase in coming years. One of the key reasons is primarily passenger safety, autonomous driving functionalities, and vehicle connectivity and government policies encouraging electric vehicle manufacturing. The Indian market on autonomous electronics likely to cross 18 billion USD by 2027 [1] Based on a report from National crime records bureau survey 2020, 37 out of 100 deaths are due to road accidents. The high probability for road accidents is due to attention deficiency of drivers. The risks associated with human error can be mitigated through in cabin driver monitoring system mostly termed as Driver Monitoring System (DMS)</p>
 
           
-            </div>
-            <div className="col-md-6">
-
-            </div>
+            
+          
         </div>
       </div>
 
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
-
+          <div className="col-md-6 d-flex justify-content-center align-items-center">
+          <img src="/face.webp" style={{width:'100%', borderRadius:'20px'}} />
           </div>
           <div class="col-lg-6">
 <div class="problem_overview_content" >
@@ -89,14 +86,14 @@ const Page = () => {
 <li>Interior /Occupant Monitoring Systems</li>
 </ul></td>
 </tr>
-<tr>
+{/* <tr>
 <td>Vigilance Monitoring</td>
 <td><ul>
 <li>Facial analysis</li>
 <li>Posture Analysis</li>
 <li>Cabin passenger detection</li>
 </ul></td>
-</tr>
+</tr> */}
 </tbody>
 </table>
 </div>
