@@ -424,7 +424,7 @@ const Page = () => {
                      <p className="my-1 " >{item.description}</p>
                    </div>
 
-                       <button className="btn btn-success" onClick={handleShow}>Apply</button>
+                       <button className="navbtn" onClick={handleShow}>Apply</button>
                 </div>
               </div>
             )

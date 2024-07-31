@@ -607,7 +607,7 @@ img.blog-img{
 }
 .boxes{
   border-radius: 16px;
-  background: #cac5c5;
+  background: #e9e7e7;
   box-shadow:  5px 5px 10px #e6e1e1,
                -5px -5px 10px #ffffff;
  width: 30% !important;
@@ -617,7 +617,7 @@ img.blog-img{
 .contentwrite{
   height: 400px;
   width: 100% !important;
-  overflow: scroll !important;
+  overflow: hidden!important;
 }
 .over{
   height: 200px;
