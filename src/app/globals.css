@@ -576,9 +576,7 @@ table{
   overflow-x: scroll !important;
   width: 100% !important;
 }
-.row div{
-  overflow-x: hidden  !important;
-}
+
 .col-md-6{
   overflow-x: hidden  !important;
 }

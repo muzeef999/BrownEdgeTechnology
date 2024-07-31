@@ -1,226 +1,365 @@
-"use client";
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { Sidebar } from '../../compoents/Sidebar';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Table from 'react-bootstrap/Table';
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { FaArrowRight, FaHome } from "react-icons/fa";
+import validation from "../asserts/validation.png";
+import { FaLocationDot } from "react-icons/fa6";
+import bgcontact from "../asserts/bgcontact.jpg";
+
+import one from "../asserts/carrer/1.jpg";
+import two from "../asserts/carrer/2.jpg";
+import three from "../asserts/carrer/3.jpg";
+import four from "../asserts/carrer/4.jpg";
+import five from "../asserts/carrer/5.jpg";
+import six from "../asserts/carrer/6.jpg";
+import seven from "../asserts/carrer/7.jpg";
+import axios from "axios";
 import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-const createCareer = async (careerData) => {
-  try {
-    const response = await axios.post('https://node-bqys.onrender.com/postcarear/create', careerData);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-};
-
-
+import Modal from 'react-bootstrap/Modal';
 
 const Page = () => {
-  const [location, setLocation] = useState('');
-  const [jobpost, setJobpost] = useState('');
-  const [experience, setExperience] = useState('');
-  const [description, setDescription] = useState('');
-  const [appliedDate, setAppliedDate] = useState(new Date());
+  const [activeTab, setActiveTab] = useState("company-culture");
+  const [data, setdata] = useState([]);
+  const [valid, setvalid] = useState(true);
+  const [loader, setloader] = useState(false);
   const [show, setShow] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    appliedPosition: '',
+    description: '',
+  });
+
+  useEffect(() => {
+    setloader(true);
+    axios.get("https://node-bqys.onrender.com/postcarear/")
+      .then((res) => {
+        console.log(res.data, "dfasd");
+        setdata(res.data);
+        setloader(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setloader(false);
+      });
+  }, []);
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('https://node-bqys.onrender.com/carear/create', formData);
+      console.log('Form submitted successfully', response.data);
+      setvalid(false);
+      setFormData({
+        name: '',
+        email: '',
+        number: '',
+        appliedPosition: '',
+        description: '',
+      });
+    } catch (error) {
+      console.error('There was an error submitting the form!', error);
+    }
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const careerData = {
-      location,
-      jobpost,
-      experience,
-      description,
-      appliedDate,
-    };
-    try {
-      const newCareer = await createCareer(careerData);
-      console.log(newCareer);
-      toast.success('Career post saved successfully!');
 
-
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const[hold,sethold]=useState([])
-  const [data,setdata]=useState([])
-  useEffect(()=>{
-    axios.get("https://node-bqys.onrender.com/postcarear/")
-    .then((res)=>{
-      console.log(res.data,"caret")
-      sethold(res.data)
-    }) 
-    .catch((err)=>{ 
-      console.log(err)
-    })
-      },[])
-
-
-      useEffect(()=>{
-        axios.get("https://node-bqys.onrender.com/carear/get")
-        .then((res)=>{
-          console.log(res.data)
-          setdata(res.data)
-        })
-        .catch((err)=>{
-          console.log(err)
-        })
-          },[])
-
-      const deleteitem = (item) => {
-        axios.delete(`https://node-bqys.onrender.com/postcarear/delete/${item._id}`)
-          .then((res) => {
-            console.log('Delete successful:', res.data);
-            toast.success('Delete Successfully');
-          })
-          .catch((err) => {
-            console.error('Error deleting item:', err);
-          });
-      };
-
-      const deleteitems = (item) =>{
-          axios.delete(`https://node-bqys.onrender.com/carear/delete/${item._id}`)
-          .then((res)=>{
-            console.log(res)
-            toast.success('Delete Successfully');
-          })
-          .catch((err)=>{
-            console.log(err)
-          })
-      }
   return (
-    <div>
-      <div className="pageContainer  ">
-    <div className="menubar">
-    <Sidebar />
-    </div>
-     
-    <div className=" container" style={{marginTop:"130px"}}>
-    <ToastContainer />
-    <div className='d-flex justify-content-between'>
-      <div >
-      <h1 className='mb-3'>Create Career Application</h1>
-      </div>
-      <div className='me-3'>
-      <Button variant="primary" className='offcanvas-nav' onClick={handleShow}>
-        Launch
-      </Button>
-      </div>
-    </div>
-      <form onSubmit={handleSubmit} className='d-grid w-100'>
-        <label>
-          Job Post:
-          <input className='form-control' type="text" value={jobpost} onChange={(e) => setJobpost(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Location:
-          <input type="text" className='form-control' value={location} onChange={(e) => setLocation(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Experience:
-          <input className='form-control' type="text" value={experience} onChange={(e) => setExperience(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Description:
-          <textarea className='form-control' value={description} onChange={(e) => setDescription(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-      <div className='my-5'>
-      <h2>Availabe Jobs</h2>
-    </div>
-    <div className="table-responsive">
-  <Table striped bordered hover variant="dark">
-    <thead>
-      <tr>
-        <th>Number</th>
-        <th>Post Name</th>
-        <th>Location</th>
-        <th>Experience</th>
-        <th>About This JOb</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        hold && hold.map((item, index) => (
-          <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{item.jobpost}</td>
-            <td>{item.location}</td>
-            <td>{item.experience}</td>
-            <td>{item.description}</td>
-            <td>
-              <button onClick={() => deleteitem(item)} className="btn btn-danger">
-                Delete
-              </button>
-            </td>
-          </tr>
-        ))
-      }
-    </tbody>
-  </Table>
-</div>
-    <div className='table-responsive'>
-      <h2 className='mb-4'>Applied Jobs</h2>
-    <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>Number</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Number</th>
-          <th>Applied Position</th>
-          <th>Description</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
+    <>
+      {!loader ? (
+        <div className="loaderbox">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        <div>
+          <div className="position-relative video-container">
+            <div className="embed-responsive embed-responsive-16by9">
+              <video
+                className="embed-responsive-item"
+                src="/carrer.mp4"
+                muted
+                autoPlay
+                loop
+              ></video>
+            </div>
+            <div
+              className="position-absolute w-100 h-100"
+              style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+            ></div>
+            <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+              <h1
+                style={{ color: "#FFF", fontWeight: "500" }}
+                className="about-data"
+              >
+                Career
+              </h1>
+            </div>
+          </div>
+          <br />
 
-<tbody>
-{
-     data && data.map((item,index)=>{
-      return(
-        <tr key={index}>
-          <td>{index+1}</td>
-              <td>{item.name}</td>
-              <td>{item.email}</td>
-              <td>{item.number}</td>
-              <td>{item.appliedPosition
-              }</td>
-               <td>{item.description
-              }</td>
-              <td><button onClick={()=>deleteitems(item)} className='btn btn-danger'>Delete </button></td>
-        </tr>
-      )
-     })
-      }
-</tbody>
-    
-      </Table>
-    </div>
-    </div>
-    </div>
+          <div className="container">
+            <div className="d-flex justify-content-center align-items-center">
+              <ul
+                className="nav custom-btn-group justify-content-center"
+                id="myTab"
+                role="tablist"
+              >
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${activeTab === "company-culture" ? "active1" : ""}`}
+                    id="company-culture-tab"
+                    onClick={() => handleTabClick("company-culture")}
+                    role="tab"
+                    aria-controls="company-culture"
+                    aria-selected={activeTab === "company-culture"}
+                  >
+                    COMPANY CULTURE
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${activeTab === "diversity" ? "active1" : ""}`}
+                    id="diversity-tab"
+                    onClick={() => handleTabClick("diversity")}
+                    role="tab"
+                    aria-controls="diversity"
+                    aria-selected={activeTab === "diversity"}
+                  >
+                    DIVERSITY
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${activeTab === "job-opportunities" ? "active1" : ""}`}
+                    id="job-opportunities-tab"
+                    onClick={() => handleTabClick("job-opportunities")}
+                    role="tab"
+                    aria-controls="job-opportunities"
+                    aria-selected={activeTab === "job-opportunities"}
+                  >
+                    JOB OPPORTUNITIES
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div className="tab-content" id="myTabContent">
+              <div
+                className={`tab-pane fade ${activeTab === "company-culture" ? "show active1" : ""}`}
+                id="company-culture"
+                role="tabpanel"
+                aria-labelledby="company-culture-tab"
+              >
+                <h2 style={{ color: "#964B00" }}>What’s in it for you?</h2>
+                <p>
+                  Working at Brown Edge Technology is a journey in which our
+                  employees can develop their strengths and advance their careers
+                  while making a difference globally. If you’re looking for an
+                  opportunity that will change the world and how we interact with
+                  vehicles, join us. Brown Edge Technology is where the best
+                  technical talent creates the future.
+                </p>
+                <br />
 
-    <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body style={{backgroundColor:"#ffe6cc"}}>
-       <Sidebar />
-        </Offcanvas.Body>
-      </Offcanvas>
-  
-    </div>
+                <div className="row card-boxes">
+                  <div className="col-sm-12 col-md-4">
+                    <div className="card border-0">
+                      <Image
+                        src={one}
+                        alt="..."
+                        className="card-img-top"
+                        layout="responsive"
+                        width={500}
+                        height={300}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">GET HIRED</h5>
+                        <p className="card-text">
+                          <span className="fw-bold">Perks & Benefits</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-sm-12 col-md-4">
+                    <div className="card border-0">
+                      <Image
+                        src={two}
+                        alt="..."
+                        className="card-img-top"
+                        layout="responsive"
+                        width={500}
+                        height={300}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">JOB OPPORTUNITIES</h5>
+                        <p className="card-text">
+                          <span className="fw-bold">Company Culture</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-sm-12 col-md-4">
+                    <div className="card border-0">
+                      <Image
+                        src={three}
+                        alt="..."
+                        className="card-img-top"
+                        layout="responsive"
+                        width={500}
+                        height={300}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">DIVERSITY</h5>
+                        <p className="card-text">
+                          <span className="fw-bold">Learn more</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <div className="text-center">
+                  <Button variant="primary" onClick={handleShow}>
+                    Apply Now
+                  </Button>
+                </div>
+              </div>
+              <div
+                className={`tab-pane fade ${activeTab === "diversity" ? "show active1" : ""}`}
+                id="diversity"
+                role="tabpanel"
+                aria-labelledby="diversity-tab"
+              >
+                <h2 style={{ color: "#964B00" }}>Diversity and Inclusion</h2>
+                <p>
+                  At Brown Edge Technology, diversity and inclusion are at the
+                  core of our values. We believe in fostering a workplace that
+                  celebrates different perspectives, backgrounds, and experiences.
+                </p>
+                <br />
+              </div>
+              <div
+                className={`tab-pane fade ${activeTab === "job-opportunities" ? "show active1" : ""}`}
+                id="job-opportunities"
+                role="tabpanel"
+                aria-labelledby="job-opportunities-tab"
+              >
+                <h2 style={{ color: "#964B00" }}>Current Openings</h2>
+                <div className="container">
+                  <div className="row">
+                    {data.map((item) => (
+                      <div className="col-sm-12 col-md-4 mb-3" key={item.id}>
+                        <div className="card border-0">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            className="card-img-top"
+                            layout="responsive"
+                            width={500}
+                            height={300}
+                          />
+                          <div className="card-body">
+                            <h5 className="card-title">{item.title}</h5>
+                            <p className="card-text">{item.description}</p>
+                            <a href={item.link} className="btn btn-primary">
+                              Apply Now
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <br />
+              </div>
+            </div>
+          </div>
+
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Apply for a Job</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="number" className="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    id="number"
+                    name="number"
+                    value={formData.number}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="appliedPosition" className="form-label">Applied Position</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="appliedPosition"
+                    name="appliedPosition"
+                    value={formData.appliedPosition}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="description" className="form-label">Description</label>
+                  <textarea
+                    className="form-control"
+                    id="description"
+                    name="description"
+                    value={formData.description}
+                    onChange={handleChange}
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </form>
+            </Modal.Body>
+          </Modal>
+        </div>
+      )}
+    </>
   );
 };
 
