@@ -47,60 +47,31 @@ const Page = () => {
             </div>
           </div>
 
+          <br/>
+          <br/>
+
           <div className="container my-3">
-            <h2 className="text-center mb-3" data-aos="fade-up">Cyber Security</h2>
+           
             <div className="row">
               <div className="col-md-12" data-aos="fade-right">
-                <h2 style={{ color: " #964B00" }}>Cybersecurity at BrownEdge Technology</h2>
-                <p className="p">At BrownEdge Technology, we prioritize the security and integrity of our automotive software and systems. As the automotive industry increasingly relies on digital technologies, ensuring robust cybersecurity measures is critical to protect our vehicles, data, and customers.</p>
-              </div>
-            </div>
-          </div>
+                <h2 style={{ color: " #964B00" }}>The Rise of Artificial Intelligence</h2>
+                <p className="p">The rise of artificial intelligence is signaling disruption in the technology industry. The likes of Microsoft, Google, and OpenAI are spearheading fierce competition to create the most advanced artificial intelligence aimed at improving the way we interact with technology. While intelligent language models like ChatGPT are already fascinating people with their abilities to deliver answers to given prompts, AI technologies currently available to the public are just the tip of the iceberg. In the automotive industry, artificial intelligence can streamline operations and improve efficiency throughout the supply chain. Utilization of artificial intelligence in the automotive cybersecurity sector can especially benefit threat detection and response.</p>
 
-          <div className="container">
-            <div className="row">
-              <h4 data-aos="fade-up">Our Cybersecurity Approach</h4>
-              <div className="col-md-6">
-                <ol type="1" data-aos="fade-right">
-                  <li>
-                    <h6 style={{ color: " #964B00" }}>Comprehensive Security Framework</h6>
-                    <ul type="disc">
-                      <li><p>We implement a multi-layered security framework that encompasses all aspects of our automotive systems.</p></li>
-                      <li><p>Network security, application security, data protection, and endpoint security.</p></li>
-                      <li><p>Protects against a wide range of threats and ensures the integrity of our systems.</p></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <h6 style={{ color: " #964B00" }}>Threat Detection and Prevention</h6>
-                    <ul type="disc">
-                      <li><p>Advanced tools and methodologies for detecting and preventing cyber threats in real-time.</p></li>
-                      <li><p>Intrusion detection systems (IDS), intrusion prevention systems (IPS), and anomaly detection algorithms.</p></li>
-                      <li><p>Early detection and mitigation of potential security threats.</p></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <h6 style={{ color: " #964B00" }}>Secure Software Development</h6>
-                    <ul type="disc">
-                      <li><p>Integrating security practices into every stage of the software development lifecycle.</p></li>
-                      <li><p>Code reviews, vulnerability assessments, and security testing.</p></li>
-                      <li><p>Ensures that our software is secure from inception to deployment.</p></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <h6 style={{ color: " #964B00" }}>Data Encryption and Privacy</h6>
-                    <ul type="disc">
-                      <li><p>Protecting sensitive data through encryption and robust privacy policies.</p></li>
-                      <li><p>Advanced encryption standards (AES), secure socket layer (SSL), and data masking.</p></li>
-                      <li><p>Ensures the confidentiality and integrity of customer and vehicle data.</p></li>
-                    </ul>
-                  </li>
-                </ol>
-              </div>
-              <div className="col-md-6 d-flex justify-content-center align-items-center" data-aos="fade-left">
-                <img src="/cybersec.webp" style={{ width: "100%", borderRadius: "20px" }} />
+                <h3 style={{ color: " #964B00" }}>The Need for Strengthened Vehicle Cybersecurity</h3>
+                <p className="p">Several decades ago vehicle security would entail door locks, car alarms, and airbags. While the same is still true, cybersecurity is becoming an essential part of automotive security. Ensuring full protection now includes shielding the vehicle from internal system malfunctions as well as external cyber threats. However, as cars turn more software-driven and connected, vehicle security is becoming increasingly complex.</p>
+                <p className="p">A modern-day car contains multiple electronic control units (ECUs) responsible for in-vehicle electronic systems that regulate and perform various functions ranging from essential tasks like steering and engine control to more mundane ones like unlocking doors and rolling down windows. The number of ECUs in a given vehicle depends on the quantity and complexity of vehicle features. For instance, a contemporary luxury car can have up to 150 ECUs, and the number may continue growing if new functionalities and sub-systems are added. These ECUs communicate with different parts of the vehicle and other ECUs to keep the vehicle running. Each of these ECUs and their communication nodes must be secured to protect the vehicle from cyber threats.</p>
+
+                <h3 style={{ color: " #964B00" }}>Limitations of Conventional Automotive Cybersecurity</h3>
+                <p className="p">Keyless car theft, infotainment system attacks, malware, conventional automotive cybersecurity software is built to protect against these and many other known threats. Cybersecurity companies employ ethical hacking methods to ensure the timely discovery of system loopholes. In ethical hacking, white hat hackers are responsible for hacking vehicle systems to find weaknesses in the software and report it to the cybersecurity software developers, who then implement appropriate security measures.</p>
+                <p className="p">The complex system architecture of modern vehicles contains dozens of ECUs and millions of code lines, all of which can be potentially exploited by malicious actors. Manually searching for vulnerabilities in these vehicles is like looking for a needle in a haystack. As vehicle systems get more complex securing them will become even harder. While ethical hacking helps companies develop resilient security measures against cyber attacks, this ad hoc approach to cybersecurity has its limitations.</p>
+                <p className="p">The biggest challenge in automotive cybersecurity is protecting the vehicle from unprecedented danger, also known as a zero-day attack. These attacks exploit previously undiscovered vulnerabilities in vehicle systems to install malware or tamper with the vehicle. Protection against zero-day attacks necessitates a more sophisticated approach to automotive cybersecurity, which is where AI comes in.</p>
+
+                <h3 style={{ color: " #964B00" }}>The Potential of AI/ML-powered Cybersecurity</h3>
+                <p className="p">AI/ML-based systems analyze, classify, and train on large amounts of data to self-improve and make independent decisions down the road. When applied in automotive cybersecurity, machine learning algorithms can be implemented in the security software to learn common patterns of vehicle operations. A trained model will then be able to distinguish anomalies that fall beyond the scope of ordinary vehicle signals. If malicious behavior is detected the cybersecurity software will send alerts and shield the vehicle from danger. Even if a malicious actor exploits a previously unidentified vulnerability, an AI-powered anomaly detection model will be able to detect intrusions and prevent them.</p>
+                <p className="p">A car’s digital communications are simple and more predictable than that of a typical computer network. Since signals exchanged during normal vehicle operations often follow fixed patterns, determining an anomalous signal is not very difficult. Therefore, employing unsupervised machine learning in cybersecurity is feasible. For instance, imagine a car driving on the highway at cruising speed that suddenly receives a breaking signal requesting to stop the car in the middle of the road. An AI-powered security software will be able to differentiate this unusual command from a common driving pattern. The system will then block the anomalous signal and send it over to the security experts for further action.</p>
+                <p className="p">While perfecting a fully AI-based cybersecurity software may take years, some companies are already leveraging the power of machine learning in their solutions. One example is AutoCrypt Security Fuzzer, which is an automated testing solution that employs an AI-based algorithm to input semi-random test cases into selected systems to reveal errors in vehicle software. The solution essentially causes intentional crashes in the system to expose software vulnerabilities that need to be addressed. An AI-based security fuzzer greatly reduces testing time, streamlining the ad hoc approach to cybersecurity implementation.</p>
               </div>
             </div>
-            <p data-aos="fade-up">At BrownEdge Technology, we are committed to providing secure, reliable automotive solutions that protect our customers and their data. Our comprehensive cybersecurity measures ensure that our vehicles are not only technologically advanced but also secure from potential threats.</p>
           </div>
         </div>
       )}
