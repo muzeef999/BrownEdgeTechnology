@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -12,14 +13,15 @@ const Blogs = () => {
   const [error, setError] = useState(null);
   let sliderRef = React.createRef();
 
-const router = useRouter()
+  const router = useRouter();
+
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get('https://node-bqys.onrender.com/user/get');
         setBlogs(response.data);
         setLoading(false);
-        console.log(response,"fsdfasdf")
+        console.log(response, "fsdfasdf");
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -27,14 +29,11 @@ const router = useRouter()
     };
 
     fetchBlogs();
-  }, []);
+  }, []); // Added empty dependency array
 
-  const senditem =(blog) =>{
-
-router.push(`blogs/${blog._id}`)
-
-  }
-  
+  const senditem = (blog) => {
+    router.push(`blogs/${blog._id}`);
+  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -49,7 +48,7 @@ router.push(`blogs/${blog._id}`)
       <MdKeyboardArrowRight
         className="slick-arrow"
         style={{ display: 'block', color: '#964b00', fontSize: '40px' }}
-        onClick={() => sliderRef.slickNext()}
+        onClick={() => sliderRef.current.slickNext()} // Access sliderRef.current
       />
     );
   };
@@ -59,7 +58,7 @@ router.push(`blogs/${blog._id}`)
       <MdKeyboardArrowLeft
         className="slick-arrow"
         style={{ display: 'block', color: '#964b00', fontSize: '40px' }}
-        onClick={() => sliderRef.slickPrev()}
+        onClick={() => sliderRef.current.slickPrev()} // Access sliderRef.current
       />
     );
   };
@@ -105,30 +104,30 @@ router.push(`blogs/${blog._id}`)
           <NextArrow />
         </div>
       </div>
-      <Slider ref={c => (sliderRef = c)} {...settings}>
-        {blogs?.map((blog, index) => (
-          <div 
-            key={index} 
+      <Slider ref={c => (sliderRef.current = c)} {...settings}>
+        {blogs?.map((blog) => (
+          <div
+            key={blog._id} // Use unique ID as key
             style={{
               borderRadius: '12px',
               padding: '12px',
-              cursor:'pointer',
+              cursor: 'pointer',
               boxShadow: '5px 5px 10px #c3c3c3, -5px -5px 10px #fdfdfd',
               margin: '10px 10px' // Adjusted margin to create a gap between the divs
-            }}>
-            <img 
-              src={blog.img} 
+            }}
+          >
+            <img
+              src={blog.img}
               className="blog-img"
               style={{
-                width: '90%', 
-                height: 'auto', 
-                objectFit: 'cover', 
-                borderTopLeftRadius: '12px', 
+                width: '90%',
+                height: 'auto',
+                objectFit: 'cover',
+                borderTopLeftRadius: '12px',
                 borderTopRightRadius: '12px'
-                
-              }} 
-              alt="Blog Logo" 
-              onClick={()=>senditem(blog)}
+              }}
+              alt="Blog Logo"
+              onClick={() => senditem(blog)}
             />
             <div>
               <h5>{blog.title}</h5>
