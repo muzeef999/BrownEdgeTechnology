@@ -17,19 +17,19 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("company-culture");
   const [data, setdata] = useState([]);
   const [valid, setvalid] = useState(true);
-  const [loader, setloader] = useState(false);
+  const [loader, setloader] = useState(true);
 
   useEffect(() => {
-    setloader(true);
+  
     axios.get("https://node-bqys.onrender.com/postcarear/")
       .then((res) => {
         console.log(res.data, "dfasd");
         setdata(res.data);
-        setloader(false); // Stop loader after data is fetched
+        setloader(true); // Stop loader after data is fetched
       })
       .catch((err) => {
         console.log(err);
-        setloader(false); // Stop loader in case of error
+    
       });
   }, []); // Dependency array added
 
