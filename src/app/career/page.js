@@ -1,10 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { FaArrowRight, FaHome } from "react-icons/fa";
-import validation from "../asserts/validation.png";
+import React, { useEffect, useState} from "react";
 import { FaLocationDot } from "react-icons/fa6";
-import bgcontact from "../asserts/bgcontact.jpg";
 
 import one from "../asserts/carrer/1.jpg";
 import two from "../asserts/carrer/2.jpg";
