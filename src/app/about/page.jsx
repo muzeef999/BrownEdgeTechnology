@@ -6,6 +6,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaArrowRight, FaHome } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import gallery from "../asserts/about.jpg";
+import gallery2 from "../asserts/about2.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -274,7 +275,7 @@ const Page = () => {
                       style={{ objectFit: "cover" }}
                     >
                       <Image
-                        src={gallery}
+                        src={gallery2}
                         style={{
                           width: "100%",
                           height: "auto",

@@ -152,23 +152,22 @@ const Page = () => {
       </tr>
     </thead>
     <tbody>
-      {
-        hold && hold.map((item, index) => (
-          <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{item.jobpost}</td>
-            <td>{item.location}</td>
-            <td>{item.experience}</td>
-            <td>{item.description}</td>
-            <td>
-              <button onClick={() => deleteitem(item)} className="btn btn-danger">
-                Delete
-              </button>
-            </td>
-          </tr>
-        ))
-      }
-    </tbody>
+  {hold && hold.map((item, index) => (
+    <tr key={item._id}> {/* Use a unique identifier like item._id */}
+      <td>{index + 1}</td>
+      <td>{item.jobpost}</td>
+      <td>{item.location}</td>
+      <td>{item.experience}</td>
+      <td>{item.description}</td>
+      <td>
+        <button onClick={() => deleteitem(item)} className="btn btn-danger">
+          Delete
+        </button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
   </Table>
 </div>
     <div className='table-responsive'>
