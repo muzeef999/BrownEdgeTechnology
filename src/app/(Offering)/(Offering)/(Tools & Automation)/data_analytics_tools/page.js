@@ -60,24 +60,24 @@ const Page = () => {
               <div className="col-md-12">
                 <h4 style={{ color: "#964B00" }}>Benefits of Data Analytics at BrownEdge Technology</h4>
                 <ul type='disc' className='ul'>
-                  <li className='d-flex'>
-                    <b>Enhanced Decision-Making:</b>
-                    <p> Our data-driven approach ensures that decisions are informed by accurate and comprehensive data, improving vehicle performance and customer satisfaction.</p>
+                  <li>
+                    <b>Enhanced Decision-Making : </b>
+                    <p>Our data-driven approach ensures that decisions are informed by accurate and comprehensive data, improving vehicle performance and customer satisfaction.</p>
                   </li>
-                  <li className='d-flex'>
-                    <b>Predictive Maintenance:</b>
+                  <li>
+                    <b>Predictive Maintenance : </b>
                     <p>By predicting vehicle maintenance needs, we reduce downtime and extend product lifespan.</p>
                   </li>
-                  <li className='d-flex'>
-                    <b>Customer Experience:</b>
+                  <li>
+                    <b>Customer Experience : </b>
                     <p>Analytics allows us to understand customer preferences and driving patterns, enabling us to tailor our offerings.</p>
                   </li>
-                  <li className='d-flex'>
-                    <b>Operational Efficiency:</b>
+                  <li >
+                    <b>Operational Efficiency : </b>
                     <p>We optimize manufacturing processes, reduce costs, and improve overall efficiency through data insights.</p>
                   </li>
-                  <li className='d-flex'>
-                    <b>Innovation and Development:</b>
+                  <li >
+                    <b>Innovation and Development : </b>
                     <p>Data analytics fuels our innovation, helping us develop new features and technologies to meet market demands.</p>
                   </li>
                 </ul>
