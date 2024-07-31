@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight, FaHome } from "react-icons/fa";
 import validation from "../asserts/validation.png";
-
+import { FaLocationDot } from "react-icons/fa6";
 import bgcontact from "../asserts/bgcontact.jpg";
 
 import one from "../asserts/carrer/1.jpg";
@@ -12,11 +12,15 @@ import three from "../asserts/carrer/3.jpg";
 import four from "../asserts/carrer/4.jpg";
 import five from "../asserts/carrer/5.jpg";
 import six from "../asserts/carrer/6.jpg";
-import seven from "../asserts/carrer/4.jpg";
+import seven from "../asserts/carrer/7.jpg";
+import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("company-culture");
-
+  const [data,setdata] = useState([])
+  const [valid,setvalid] =useState(true)
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -24,6 +28,61 @@ const Page = () => {
   useEffect(()=>{
     setloader(true)
   })
+  useEffect(()=>{
+    axios.get("https://node-bqys.onrender.com/postcarear/")
+    .then((res)=>{
+      console.log(res.data,"dfasd")
+      setdata(res.data)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+      },[])
+
+
+      const [show, setShow] = useState(false);
+
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
+
+
+
+
+      // separate
+
+
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        number: '',
+        appliedPosition: '',
+        description: '',
+      });
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const response = await axios.post('https://node-bqys.onrender.com/carear/create', formData);
+          console.log('Form submitted successfully', response.data);
+          setvalid(false)
+          setFormData({
+            name: '',
+            email: '',
+            number: '',
+            appliedPosition: '',
+            description: '',
+          });
+        } catch (error) {
+          console.error('There was an error submitting the form!', error);
+        }
+      };
+    
   return (
     <>
     {
@@ -39,20 +98,19 @@ const Page = () => {
             autoPlay 
             loop
           ></video>
-        </div> 
+        </div>
         <div
           className="position-absolute w-100 h-100"
           style={{ top: 0, left: 0, backgroundColor: "rgba(0, 0, 0, 0.5)" }}
         ></div>
-      <div className="container d-flex">
-  <h1
-    style={{ color: "#FFF", fontWeight: "500" }}
-    className="about-data"
-  >
-    career
-  </h1>
-</div>
-
+        <div className="container sec position-absolute top-50 start-50 translate-middle text-center">
+          <h1
+            style={{ color: "#FFF", fontWeight: "500" }}
+            className="about-data"
+          >
+            carrer
+          </h1>
+        </div>
       </div>
       <br />
 
@@ -342,57 +400,80 @@ const Page = () => {
             role="tabpanel"
             aria-labelledby="job-opportunities-tab"
           >
-            <h2 style={{ color: "#964B00" }}> JOB OPPORTUNITIES</h2>
-            <br />
-            <div
-              className="row d-flex justify-content-evenly align-items-center"
-              style={{ color: "#FFF" }}
-            >
-              <div
-                className="col-md-6 p-4"
-                style={{
-                  backgroundColor: "#cc6600",
-                  borderRadius: "6px",
-                  width: "45%",
-                }}
-              >
-                <h3>Be a revolutionary</h3>
-                <p>
-                  Today’s job seekers want to make a tangible, positive impact
-                  on the world. At Brown Edge Technology, we’re changing the
-                  world in a number ofgreat ways. We’re uniquely positioned to
-                  capitalize on two significant industry trends – electric and
-                  autonomous vehicles. Our technology will completely change the
-                  way we interact with our vehicles, reduce the number of car
-                  accidents and fatalities, and make the world a cleaner place.
-                  We’re not just dreamers, we’re doers.
-                </p>
+            <h1 style={{textTransform:"capitalize"}}>Job opportunities</h1>
+      <div className="container">
+<div className="row d-flex ">
+{
+          data && data.map((item)=>{
+            return(
+            <div className="col-md-4 boxes  d-flex justify-content-between gap-3  mb-5 ">
+  <div className="contentwrite">
+                   <h3>{item.jobpost}</h3>
+                   <div>
+                     <span ><FaLocationDot /></span>
+                     <span className="ms-2">{item.location}</span>
+                   </div>
+
+                   <div className="my-2 ">
+                     <span ><b>Exp : </b></span>
+                     <span className="ms-2">{item.experience}</span>
+                   </div>
+
+                   <div className="my-4 over">
+                    <h4>About this job</h4>
+                     <p className="my-1 " >{item.description}</p>
+                   </div>
+
+                       <button className="btn btn-success" onClick={handleShow}>Apply</button>
+                </div>
               </div>
-              <div
-                className="col-md-6 p-4"
-                style={{
-                  backgroundColor: "#cc6600",
-                  borderRadius: "6px",
-                  width: "45%",
-                }}
-              >
-                <h3>Grow your career</h3>
-                <p>
-                  Whether you’re an engineer, algorithm developer or a financial
-                  analyst, you’ll see opportunities for professional development
-                  and career advancement. If you’re passionate about advancing
-                  your career, Brown Edge Technology is the place for you. We
-                  offer mentorships, rotational programs and education benefits.
-                  Our technical ladder program offers development in a range of
-                  engineering disciplines. At Brown Edge Technology, it’s all
-                  within your reach.
-                </p>
-              </div>
-            </div>
+            )
+          })
+        }
+  </div>
+      </div>
           </div>
         </div>
       </div>
       <br />
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {
+             valid ?   <form onSubmit={handleSubmit}>
+             <div>
+               <label>Name:</label>
+               <input type="text" className="form-control" name="name" value={formData.name} onChange={handleChange} required />
+             </div>
+             <div>
+               <label>Email:</label>
+               <input className="form-control" type="email" name="email" value={formData.email} onChange={handleChange} required />
+             </div>
+             <div>
+               <label>Phone Number:</label>
+               <input className="form-control" type="text" name="number" value={formData.number} onChange={handleChange} required />
+             </div>
+             <div>
+               <label>Applied Position:</label>
+               <input className="form-control" type="text" name="appliedPosition" value={formData.appliedPosition} onChange={handleChange} required />
+             </div>
+             <div>
+               <label>Description:</label>
+               <textarea className="form-control" name="description" value={formData.description} onChange={handleChange} required></textarea>
+             </div>
+             <button type="submit" className="btn btn-success">Submit</button>
+           </form> : <div>
+            <h1>Your Form Submited Successfully Our Team Will Get Back To You</h1>
+           </div>
+          }
+      
+        </Modal.Body>
+        <Modal.Footer>
+         
+        </Modal.Footer>
+      </Modal>
  </div>
     }
 

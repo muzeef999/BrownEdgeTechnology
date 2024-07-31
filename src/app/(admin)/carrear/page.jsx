@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 const createCareer = async (careerData) => {
   try {
-    const response = await axios.post('/api/postcareers', careerData);
+    const response = await axios.post('https://node-bqys.onrender.com/postcarear/create', careerData);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -74,7 +74,7 @@ const Page = () => {
           },[])
 
       const deleteitem = (item) => {
-        axios.delete(`/api/deletes/${item._id}`)
+        axios.delete(`https://node-bqys.onrender.com/postcarear/delete/${item._id}`)
           .then((res) => {
             console.log('Delete successful:', res.data);
             toast.success('Delete Successfully');
@@ -85,7 +85,7 @@ const Page = () => {
       };
 
       const deleteitems = (item) =>{
-          axios.delete(`/api/delete/${item._id}`)
+          axios.delete(`https://node-bqys.onrender.com/carear/delete/${item._id}`)
           .then((res)=>{
             console.log(res)
             toast.success('Delete Successfully');

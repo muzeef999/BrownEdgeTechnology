@@ -60,7 +60,6 @@ body {
 }
 
 
-/*About Us*/
 
 .about {
   width: 100%;
@@ -106,13 +105,13 @@ body {
 
 /* starts here ********************************* */
 .autocare p,.p{
-  font-size: 20px !important;
-      color: #75799b !important;
+  font-size: 17px !important;
+      color: #000000 !important;
       text-align: justify;
 }
 .list-item li{
-  font-size:20px;
-  color: #75799b !important;
+  font-size:17px;
+  color: #000000 !important;
   margin-bottom: 15px;
 }
 table{
@@ -242,10 +241,13 @@ margin-bottom: 10px;
   position: absolute;
   top: 0px;
   display: flex;
-  justify-content: center; 
+  /* justify-content: center; */
   align-items: center;
   height: 100%;
   color: white;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 .box-containe{
   border-radius: 12px;
@@ -378,12 +380,12 @@ bottom: -40px !important;
   left:-10px;
 }
 }
-.about-data{
+/* .about-data{
   position: absolute;
  text-align: center;
  justify-content: center;
   bottom: 200px !important;
-}
+} */
 
 
 
@@ -598,3 +600,33 @@ img.blog-img{
 .off-head{
   height: 60px;
 }
+
+.listitem{
+  height: 200px;
+}
+.off-head{
+  height: 60px;
+}
+.boxes{
+  border-radius: 16px;
+  background: #cac5c5;
+  box-shadow:  5px 5px 10px #e6e1e1,
+               -5px -5px 10px #ffffff;
+ width: 30% !important;
+ margin-left: 15px !important;
+ padding: 10px !important;
+}
+.contentwrite{
+  height: 400px;
+  width: 100% !important;
+  overflow: scroll !important;
+}
+.over{
+  height: 200px;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+/* .container{
+  overflow: hidden !important;
+} */
