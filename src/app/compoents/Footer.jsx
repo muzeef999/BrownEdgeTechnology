@@ -196,7 +196,7 @@ export const Footer = () => {
               <IoCall /> +91 8884851128
             </p>
             <p>
-              <IoMdMail /> brownedgetechnology1@gmail.com
+              <IoMdMail /> info@brownedgetechnology.com
             </p>
           </div>
         </div>
