@@ -20,6 +20,12 @@ export default function Home() {
         </div>
       ) : (
         <>
+
+        
+          <div className="d-flex justify-content-center align-items-center" style={{width:'100%',height:'100vh'}}>
+        <h1>Payment pending</h1>
+        <div>
+        
           // <HeroSection />
 
           // <br />
@@ -31,9 +37,6 @@ export default function Home() {
           // <br />
           // <br />
 
-          <div className="d-flex justify-content-center align-items-center" style={{width:'100%',height:'100vh'}}>
-        <h1>Payment pending</h1>
-        <div>
           // <div
           //   className="container"
           //   style={{
